@@ -1,0 +1,63 @@
+form :nth-child(odd):not(:nth-child(5)) {
+    grid-column: 1 / 7;
+    margin-top: 20px;
+}
+form :nth-child(even) {
+    grid-column: 7 / 13;
+    margin-top: 20px;
+}
+form :nth-child(5) {
+    grid-column: 1 / 13;
+    margin-top: 20px;
+}
+form :last-child {
+    grid-column: 6 / 8;
+}
+/* .submitButton {
+    background: #2C5592;
+    color: white;
+    border: 0px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 30px;
+}
+.submitButton:hover {
+    background: #1f3c68;
+    transform: scale(1.1);
+} */
+input { 
+    width: 100%;
+    /* margin-top: 10px; */
+    border: 0px;
+    outline-style: none;
+    padding: 10px;
+    border-radius: 8px;
+    color: gray;
+    font-weight: 300;
+}
+input:focus {
+    outline: 2px solid var(--main);;
+}
+textarea {
+    width: 100%;
+    height: 250px;
+    /* margin-top: 10px; */
+    border: 0px;
+    outline-style: none;
+    padding: 10px;
+    border-radius: 8px;
+    color: gray;
+    font-weight: 300;
+}
+textarea:focus {
+    outline: 2px solid var(--main);;
+}
+
+@media ( max-width: 720px ) {  /* mobile */
+    form :nth-child(odd):not(:nth-child(5)) {
+        grid-column: 1 / 13;
+    }
+    form :nth-child(even) {
+        grid-column: 1 / 13;
+    }
+}

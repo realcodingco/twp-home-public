@@ -1,0 +1,165 @@
+.newsBoxWrap {
+    display: flex;
+    width: 90%;
+    height: 400;
+    margin: 0px auto;
+    vertical-align: center;
+    padding-bottom: 50px;
+}
+a.news {
+    width: 300px;
+    height: 410px;
+    box-shadow: 0 0 1.5em -0.5em rgb(0 0 0 / 25%);
+    display: block;
+    text-decoration: none;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px auto;
+    background: white;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+a.news .image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /* overflow: hidden; */
+    transition: all 0.5s ease-out;
+}
+a.news:hover {
+    transform: scale(1.03);
+}
+a.news:hover .image{
+    transform: scale(1.07);
+}
+a.news:hover h4{
+    color: black;
+}
+a.news h4 {
+    word-break: keep-all;
+}
+a .content{
+    color: #736e84;
+}
+.cardWrap {
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: start;
+    scroll-behavior: smooth;
+    padding: 20px;
+    height: 479px;
+    overflow-x: auto;
+}
+
+.cardBox {
+    text-align: center;
+    width: 300px;
+    height: 350px;
+    margin: 20px 50px;
+    flex: 0 0 auto;
+    border-radius: 9px;
+    background: white;
+    box-shadow: 0 0 1.5em -0.5em rgb(0 0 0 / 5%);
+    transition: all 0.3s ease-out;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+.cardBox:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 1.5em -0.5em rgb(0 0 0 / 30%);
+}
+.cardTop {
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+.cardTop img {
+    width: 140px;
+    height: 140px;
+    background: lightgray;
+    border-radius: 180px;
+    background-size: cover;
+    margin: 0 auto;
+    transition: all 0.3s ease-out;
+}
+.cardBottom {
+    padding: auto;
+    height: 50%;
+}
+
+.cardBox h4 {
+    text-align: left;
+    width: 80%;
+    margin: 20px auto;
+    font-weight: bold;
+    border-radius: 7px;
+    font-size: 18px;
+    background: transparent;
+    color: var(--main);
+}
+.cardBox:hover h4{
+    color: white;
+    background: var(--main);
+    border-color: var(--main_dark);
+}
+.cardBox:hover .cardBottom{
+    background: var(--main);
+}
+.cardBox:hover p {
+    color: white;
+}
+.cardBox:hover img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+}
+.cardBottom p {
+    font-size: 12px;
+    text-align: justify;
+    word-break: keep-all;
+    font-weight: 300;
+    color: gray;
+    line-height: 150%;
+    margin-bottom: 40px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* 라인수 */
+    -webkit-box-orient: vertical;
+}
+.no-scroll {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+.no-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+@media ( max-width: 880px ) {  /* mobile */
+    .cardWrap {
+        display: grid;
+        place-items: center;
+        height: auto;
+        width: 100%;
+    }
+    .cardWrap ~ button {
+        display: none;
+    }
+    .cardBox {
+        margin: 20px;
+    }
+}
+@media ( max-width: 1040px ) {
+    .newsBoxWrap {
+        display: block;
+    }
+}
+
+@media ( min-width: 880px ) {  /* pc */
+    
+}

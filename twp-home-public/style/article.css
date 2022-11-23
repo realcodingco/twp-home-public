@@ -1,0 +1,32 @@
+h2.article {
+    width: 100%;
+    text-align: center;
+    padding: 60px 30px 40px 30px;
+    color: var(--main);
+    word-break: keep-all;
+    background: white;
+}
+h2.article p {
+    width: 89%;
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: right;
+    color: gray;
+    font-weight: 300;
+}
+img.articleImage {
+    width: 60%;
+    box-shadow: 10px 10px 0.5px var(--main);
+    margin-top: 40px;
+}
+
+.articleContent {
+    line-height: 180%;
+    width: 70%;
+    margin: 50px auto;
+    text-align: justify;
+    word-break: keep-all;
+    font-weight: 300;
+    font-size: 18px;
+    color: dimgray;
+}

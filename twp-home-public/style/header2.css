@@ -1,0 +1,145 @@
+li.menuTitle a{
+    text-decoration: none;
+    padding: 20px;
+    font-size: 18px;
+    color: black;
+}
+li.menuTitle a:hover {
+    transform: scale(1.1);
+    color: var(--main);
+    font-weight: bold; 
+}
+
+.menuIcon{
+    width: 24px;
+    height: 18px;
+    margin: 30px 20px;
+    float: right;
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 20px;
+}
+.menuIcon span:nth-child(1) {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+.menuIcon span:nth-child(2) {
+    position: absolute;
+    top: 7px;
+    width: 75%;
+    margin-left: 25%;
+    height: 3px;
+    background-color: black;
+}
+.menuIcon span:nth-child(3) {
+    position: absolute;
+    top: 14px;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+
+.menuTrigger {
+    /* margin-right: 70px;
+    margin-bottom: 50px; */
+    display: none;
+    position: absolute !important;
+    right:30px;
+    top: 30px;
+}
+.menuTrigger,
+.menuTrigger span {
+    display: inline-block;
+    transition: all .4s;
+    box-sizing: border-box;
+}
+
+.menuTrigger {
+    position: relative;
+    width: 34px;
+    height: 30px;
+    display: none;
+}
+
+.menuTrigger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    border-radius: 4px;
+}
+
+.menuTrigger span:nth-of-type(1) {
+    top: 0;
+}   
+
+.menuTrigger span:nth-of-type(2) {
+    top: 12px;
+}
+
+.menuTrigger span:nth-of-type(3) {
+    bottom: 0;
+}
+.menuTrigger.active span:nth-of-type(1) {
+    -webkit-transform: translateY (13px) rotate (-45deg);
+    transform: translateY(13px) rotate(-45deg);
+}
+
+.menuTrigger.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.menuTrigger.active span:nth-of-type(3) {
+    -webkit-transform: translateY(-13px) rotate(45deg);
+    transform: translateY(-13px) rotate(45deg);
+}
+  
+
+ul.menuBox {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    float: right;
+    height: auto;
+    width: auto;
+    display: flex;
+    padding: 20px;
+    font-family: Montserrat;
+    font-weight: 300;
+}
+ul.menuBox.clicked {
+    width:100%;
+    display: flex;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    flex-direction: column;
+    line-height: 40px;
+}
+@media ( max-width: 1040px ) {  /* mobile */
+    ul.menuBox {
+        display: none;
+    }
+    .menuIcon {
+        display: block;
+    }
+    .menuTrigger {
+        display: block;
+    }
+    .header {
+        position: absolute !important;
+    }
+}
+
+@media ( min-width: 1040px ) {  /* pc */
+    ul.menuBox {
+        display: flex;
+    }
+    .menuIcon{
+        display: none;
+    }
+}

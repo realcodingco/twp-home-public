@@ -1,0 +1,39 @@
+.footer-wrap {
+    display: flex;
+    padding-top: 30px;
+}
+a.ci { 
+    width: 140px;
+    height: 65px;
+    margin: 50px;
+}
+a.ci img {
+    width: 140px;
+    height: 65px;
+}
+a.link {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+a.link:hover {
+    color: var(--main);;
+}
+
+@media ( max-width: 750px ) {  /* mobile */
+    .footer-wrap {
+        display: block;
+        padding-top: 40px;
+    }
+    .footer-wrap a.ci {
+        margin: 50px 0px 20px 20px !important;
+    }
+    
+}
+
+@media ( min-width: 750PX ) {  /* pc */
+
+}

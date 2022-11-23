@@ -1,0 +1,91 @@
+.btnContainer {
+    width: 130px;
+    height: 40px;
+    text-align: center;
+}
+button#submitBtn {
+    outline:none;
+    height: 40px;
+    text-align: center;
+    width: 130px;
+    border-radius:40px;
+    background: #fff;
+    border: 2px solid var(--main);
+    color: var(--main);
+    letter-spacing:1px;
+    text-shadow:0;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+button#submitBtn:hover {
+    color:white;
+    background: var(--main);
+    transform: scale(1.07);
+}
+button#submitBtn:active {
+    letter-spacing: 2px ;
+}
+/* button#submitBtn:after {
+    content:"SUBMIT";
+} */
+
+.onclic {
+    width: 40px !important;
+    border-color:#bbbbbb !important;
+    border-width:3px !important;
+    font-size:0px !important;
+    border-left-color: var(--main) !important;
+    animation: rotating 2s 0.25s linear infinite;
+}
+.onclic:after {
+    content:"";
+}
+.onclic:hover {
+    color:#1ECD97;
+    background: white;
+}
+
+.validate {
+    font-size:13px !important;
+    color: white !important;
+    background: var(--main) !important;
+}
+.validate:after {
+    font-family:'FontAwesome' !important;
+    content:"\f00c" !important;
+}
+
+.alertMsg {
+    width: 100%;
+    text-align: center;
+    color: red;
+    font-size: 12px;
+    font-weight: 300;
+    position: absolute;
+    animation: fadeInUp 1s;
+    transition: all 0.2s ease-out;
+}
+  
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+

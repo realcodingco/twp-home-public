@@ -1,0 +1,12 @@
+li.legalList {
+    list-style: none;
+}
+.legalList a {
+    color: gray !important;
+    font-weight: 300;
+    text-decoration: none;
+}
+li.legalList.clicked a {
+    color: black !important;
+    font-weight: 500;
+}

@@ -1,7 +1,7 @@
 const config = {
     keyColor: '#2C5592', // 주요 컬러
     cname : 'TransWave Photonics', // 회사명
-    ci : 'https://transwavephotonics.files.wordpress.com/2018/11/logo-new-black.png',
+    ci : './style/ci1.png',
     email : 'info@transwavephotonics.com',
     phone : '000-0000',
     copyright : '© Copyright TransWave Photonics',

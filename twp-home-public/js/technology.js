@@ -4,7 +4,7 @@ const header = BX.components.Header2.bx(config.header).appendTo(topBox);
 const b = box().align('center').paddingBottom(100).color('rgb(181, 207, 246, 0.2)').appendTo(topBox).marginTop($('.header')[0].offsetHeight);
 BX.component(intro.head).appendTo(b).text('Technoloby');
 
-const tech = config.about.desc;
+const tech = config.technology;
 for(var i=0; i<tech.length; i++) {
     const img = BX.component(article.image).appendTo(b);
     img[0].src = tech[i].image;

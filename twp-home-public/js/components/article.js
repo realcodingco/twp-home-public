@@ -2,7 +2,7 @@ const compData = {
     bx : article,
     category: 'article',
     user: 'zzin',
-    desc: `뉴스 페이지 컴포넌트<br>
+    desc: `뉴스 기사 컴포넌트<br>
 ▼ scheme 데이터 :<br>
 배열 - image, title, desc, time 객체 항목`,
     basicCode: `BX.components.Article.bx().appendTo(topBox);`,
@@ -21,13 +21,12 @@ bx.appendTo(topBox);`
 BX.regist('Article', compData);
 
 /**
- * 뉴스 페이지 리스트 컴포넌트
+ * 뉴스 기사 컴포넌트
  * @param {object} scheme 
- * @returns 뉴스 리스트 box
+ * @returns 뉴스 기사 box
  */
 function article(scheme) {
     const b = box().align('center').paddingBottom(100).color('rgb(181, 207, 246, 0.2)');
-
     const articleData = config.newContent.data.filter(i => i.aid == scheme.aid)[0];
     const title = BX.component(article.head).text(articleData.title).appendTo(b);
     
@@ -36,13 +35,13 @@ function article(scheme) {
         month: 'long',
         day: 'numeric',
     });
-
+    
     if(articleData.image) {
         const img = BX.component(article.image).appendTo(b);
         img[0].src = articleData.image;
     }
 
     BX.component(article.text).text(articleData.desc).appendTo(b)
-
+    box().appendTo(b).html('<a href="news.html" style="text-decoration:none; color:black; float:left; margin-left:50px;">< Back to list </a>');
     return b;
 } 

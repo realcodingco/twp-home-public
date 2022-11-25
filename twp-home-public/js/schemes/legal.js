@@ -1,22 +1,11 @@
 const legal = {
     menuBar : {
         kind: 'box',
-        style : {
-            width: 260,
-            height: '100%',
-            background : '#f7f7f7',
-            padding: 20,
-            lineHeight: '180%',
-            display: 'table-cell',            
-        }
+        className: 'legalNav',
     },
     document : {
         kind: 'box',
-        style : {
-            width: '100%',
-            height: '100%', 
-            minHeight: 900,
-        }
+        className: 'documentBg'
     },
     docTitle : {
         kind: 'li',
@@ -41,28 +30,25 @@ const legal = {
     },
     txtBox :{
         kind : 'box',
-        style: {
-            padding : '20px 80px',
-            fontWeight : 300,
-            textAlign : 'justify',
-            wordBreak : 'keep-all'
-        }
+        className: 'teamsTxt',
     },
     frame : {
         kind : 'box',
         style: {
-            paddingBottom: 50,
-            overflow: 'auto'
+            // paddingBottom: 50,
+            overflow: 'auto',
+            height: '100%'
         },
         children: [
             {
                 kind: 'iframe',
+                id: 'theIframe',
                 name: 'theIframe',
-                scrolling : 'no',
+                // scrolling : 'no',
                 style : {
                     width: '100%',
-                    height: 7149,
-                    marignBottom: 100
+                    height: '100vh',//7149
+                    // marignBottom: 100
                 }
             }
         ]

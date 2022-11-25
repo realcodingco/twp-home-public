@@ -2,23 +2,10 @@ const compData = {
     bx : submitBtn,
     category: '',
     user: 'zzin',
-    desc: `제출 버튼 컴포넌트<br>
-▼ scheme 데이터 key :<br>
-resource`,
+    desc: `contact 제출 버튼 컴포넌트<br>
+메일 발송 기능 포함<br>`,
     basicCode: `BX.components.SubmitBtn.bx().appendTo(topBox);`,
-    extendCode: `<font color=gray>// scheme 데이터 사용</font>
-const scheme = {
-    headTitle: '',
-    desc : [
-        {
-            head: '',
-            image : '이미지경로',
-            text: '이미지별 문구'
-        }
-    ]
-};
-const bx = BX.components.SubmitBtn.bx(scheme);
-bx.appendTo(topBox);`
+    extendCode: ''
 };
 BX.regist('SubmitBtn', compData);
 
@@ -33,7 +20,55 @@ function submitBtn(scheme) {
     return b;
 }
 
-let submitContent = {};
+let twp = null;
+let submitContent = {}; // FirstName, LastName, Company, Email, desc
+/**
+ * Database 초기화
+ * 의존 스크립트: firebase-app.js, firebase-firestore.js
+ */
+function initDatabase() {
+    if(!twp) {
+        twp = firebase.initializeApp({
+            apiKey: "AIzaSyCMnqZdFF-EznSRPmYqIS1EZOJ6_2hZJR0",
+            authDomain: "rc-twp-home.firebaseapp.com",
+            projectId: "rc-twp-home",
+            storageBucket: "rc-twp-home.appspot.com",
+            messagingSenderId: "613984032633",
+            appId: "1:613984032633:web:91f56e0af29e93dfca01a8"
+        });
+    }
+}
+
+/**
+ * 이메일 템플릿 내용 기반으로 메일 발송한다.
+ */
+function sendEmail() {
+    const name = submitContent.FirstName + ' ' + submitContent.LastName;
+
+    // 메일 받는사람
+    const to = 'tohj@realcoding.co'; // config.email로 변경..
+    // 제목
+    const subject = `[Homepage/Inbound] Message from ${name}`;
+    // 내용
+    const html = `<div>
+        <p>
+            <b>NAME</b>: ${name}<br>
+            <b>EMAIL</b>: ${submitContent.Email}<br>
+            <b>COMPANY</b>: ${submitContent.Company}<br>
+            <b>QUESTION</b><br>
+            ${submitContent.desc}
+        </p>
+    </div>`
+
+    initDatabase();
+    twp.firestore().collection('email').add({
+        message: {
+            subject, html
+        },
+        to
+    });
+}
+
 /**
  * sumbit 버튼의 클릭 이벤트 전송 애니메이션 함수
  * @param {*} e 
@@ -48,6 +83,11 @@ function onSubmit(e) {
     };
 
     const callback = function() {
+        sendEmail(); // 이메일 전송 api 
+        const btnPos = $('#submitBtn')[0].getBoundingClientRect();
+        const msg = BX.component(submitSchemes.alert).text(config.submitSuccessMsg).textColor('green').left(0).top(window.pageYOffset + btnPos.top - 50).appendTo($('.contactFormWrap')[0]);
+        setTimeout(() => msg.remove(), 2500);
+
         //모든 입력상자 내용 지우기
         let el = document.getElementsByTagName('input');
         for(var i=0; i<el.length; i++){
@@ -55,12 +95,6 @@ function onSubmit(e) {
         }
         const textareaEl = document.getElementsByTagName('textarea');
         textareaEl[0].value = '';
-
-        // 이메일 전송 api 필요
-        console.log(submitContent);
-        const btnPos = $('#submitBtn')[0].getBoundingClientRect();
-        const msg = BX.component(submitSchemes.alert).text(config.submitSuccessMsg).textColor('green').left(0).top(window.pageYOffset + btnPos.top - 50).appendTo($('.contactFormWrap')[0]);
-        setTimeout(() => msg.remove(), 2500);
 
         setTimeout(function() {
             $( "#submitBtn" ).removeClass( "validate" );
@@ -71,7 +105,7 @@ function onSubmit(e) {
 
     e.preventDefault();
     const btnPos = e.target.getBoundingClientRect();
-    console.log()
+
     if(checkInputs() != 0) {
         if($('.alertMsg')[0] == undefined) {
             const msg = BX.component(submitSchemes.alert).text(config.checkRequiredMsg).left(0).top(window.pageYOffset + btnPos.top - 50).appendTo($('.contactFormWrap')[0]);
@@ -98,7 +132,7 @@ function checkInputs() {
         }
 
         if(key.includes('*')) {
-            submitContent[key.slice(0, -1)] = el[i].value;
+            submitContent[key.slice(0, -1).replace(/(\s*)/g, "")] = el[i].value;
         }
         else {
             submitContent[key] = el[i].value;

@@ -1,5 +1,7 @@
 li.legalList {
     list-style: none;
+    margin: 10px auto;
+    font-size: 17px;
 }
 .legalList a {
     color: gray !important;
@@ -9,4 +11,37 @@ li.legalList {
 li.legalList.clicked a {
     color: black !important;
     font-weight: 500;
+}
+.documentBg {
+    width: 100%;
+    height: 100%;
+    /* min-height: 900px; */
+}
+.legalNav {
+    width: 260px;
+    height: 100%;
+    background : #f7f7f7;
+    padding: 20px;
+    line-height: 180%;
+    display: table-cell;
+}
+.teamsTxt {
+    padding : 20px 80px;
+    font-weight : 300;
+    text-align : justify;
+    word-break : keep-all;
+}
+
+@media ( max-width: 750px ) { 
+    .legalNav {
+        width: 100%;
+        height: auto;
+    }
+    .legalBody {
+        display: flex !important;
+        flex-direction: column;
+    }
+    .teamsTxt {
+        padding: 20px; 
+    }
 }

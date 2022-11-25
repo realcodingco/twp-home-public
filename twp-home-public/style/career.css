@@ -1,0 +1,5 @@
+.careerBanner {
+    height: 450px;
+    background-size : cover !important;
+    object-fit : scale-down;
+}

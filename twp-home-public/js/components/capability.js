@@ -25,18 +25,11 @@ function capability(scheme) {
     BX.component(intro.head).appendTo(b).text('Capabilities');
     
     const gradImg = BX.component(capability.gradImgBox).appendTo(b)
-    gradImg[0].style.background = "linear-gradient(\
-        to right,\
-        rgba(255,255,255,0) 10%,\
-        rgba(255,255,255,0.4) 25%,\
-        rgba(255,255,255,0.95) 50%,\
-        rgba(255,255,255,1) 100%\
-    ) , url('https://cdn.pixabay.com/photo/2016/07/14/02/01/fibre-1515964_1280.jpg')"
+    gradImg[0].style.background = "url('https://cdn.pixabay.com/photo/2016/07/14/02/01/fibre-1515964_1280.jpg')";
 
     const itemBg = BX.component(capability.itemBg).appendTo(b);
-    
-    const items = scheme.items;
 
+    const items = scheme.items;
     Object.keys(items).forEach(function(o, i) {
         const item = BX.component(capability.itemBox).appendTo(itemBg);
         item.children()[0].innerText = i + 1;
@@ -46,5 +39,3 @@ function capability(scheme) {
 
     return b;
 }
-
-//https://cdn.pixabay.com/photo/2016/07/14/02/01/fibre-1515964_1280.jpg 배경 이미지

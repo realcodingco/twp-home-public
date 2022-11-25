@@ -1,16 +1,16 @@
 const config = {
-    keyColor: '#2C5592',
-    cname : 'TransWave Photonics',
+    keyColor: '#2C5592', // 주요 컬러
+    cname : 'TransWave Photonics', // 회사명
     ci : 'https://transwavephotonics.files.wordpress.com/2018/11/logo-new-black.png',
     email : 'info@transwavephotonics.com',
     phone : '000-0000',
     copyright : '© Copyright TransWave Photonics',
     address :  '8711 Burnet Rd. Ste. E55, Austin, TX 78757',
-    submitSuccessMsg : 'Thanks for getting in touch with us',
-    checkRequiredMsg : 'required fields not entered',
+    submitSuccessMsg : 'Thanks for getting in touch with us', // contact 페이지 전송 성공 메시지
+    checkRequiredMsg : 'required fields not entered', // contact 페이지 필수항목 미입력 메시지
     header : { // 헤더 구성 - 메뉴
         home: 'index.html', //홈 링크
-        menuData: [
+        menuData: [ // 메뉴 항목 : 사용 여부는 state - open, close
             {
                 title: 'About', 
                 link: 'about.html', 
@@ -39,12 +39,12 @@ const config = {
             {
                 title: 'Careers', 
                 link: 'careers.html',
-                state: 'close'
+                state: 'open'
             },
         ]
     },
     banner : { // 메인 배너 구성
-        resource : [ 
+        resource : [ // 배너 이미지, 텍스트
             {
                 image: 'style/prod1.png',
                 text: 'Monolithic PICs'
@@ -60,11 +60,11 @@ const config = {
         ]
     },
     about : { // 메인 페이지 카드 섹션 구성
-        headTitle: {
+        headTitle: { 
            keyword: 'innovative integration technology',
            text: 'TransWave Photonics, located in Austin, TX, develops mid-infrared photonic integrated circuits and systems using our innovative integration technology.',
         },
-        desc: [
+        desc: [ 
             {
                 head: 'mid-infrared systems',
                 image: 'https://transwavephotonics.files.wordpress.com/2018/11/simulation.png?w=592&h=252',
@@ -78,9 +78,22 @@ const config = {
             }
         ]
     },
+    technology : [  // technology 페이지 내용
+        {
+            head: 'mid-infrared systems',
+            image: 'https://transwavephotonics.files.wordpress.com/2018/11/simulation.png?w=592&h=252',
+            text: 'Conventional mid-infrared systems are built based on an assembly of discrete components such as light sources, detectors, free space optics, moving mirrors, etc. As a result, such systems are invariably bulky, expensive, and inefficient. Our mission is to deliver miniaturized mid-infrared systems where all active and passive photonic components are monolithically integrated for unmatched size, weight, efficiency, reliability, and functionality.'
+        },
+        {
+            head: 'Photonic systems',
+            image: 'https://transwavephotonics.files.wordpress.com/2018/11/taper.png?w=316&h=324',
+            text: 'Photonic systems that we develop, customize, or prototype find various applications including communications, integrated sensing, biomedicine, environmental monitoring, and defense and homeland security.<br><br>\
+TransWave Photonics recently received a STTR Phase 2 award for development of monolithic mid-infrared beam steering systems, sponsored by Army Research Office.'
+        }
+    ],
     application : { // 메인 페이지 applications 섹션 구성
         headTitle: 'Applications',
-        tags: [
+        tags: [ // 가로 스크롤 항목
             {
                 icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/BAE_Hot_Brick.jpg/440px-BAE_Hot_Brick.jpg',
                 title: 'IRCMs',
@@ -104,7 +117,7 @@ const config = {
         ]
     },
     intro : { // about 메뉴 페이지 구성 - 회사, 팀 소개
-        title : 'About TransWave Photonics',
+        title : 'About TransWave Photonics', // 페이지 제목
         cPhoto: 'style/roadview.png', // 회사 전경 이미지
         links : { // 링크 배너 소스
             'Technology' : {
@@ -119,11 +132,11 @@ const config = {
             }, 
             'Career' : {
                 image: 'https://i.picsum.photos/id/5/430/240.jpg?hmac=BJvPKsEId7pBdAepjGTAnre5hg6BDWlILFDJXkZ3A2A',
-                href: '',
+                href: 'careers.html',
                 text: 'Join us our company'
             }
         },
-        team : [
+        team : [ // about 페이지 팀소개
             {
                 name: 'Jung, s.',
                 position: 'CEO',
@@ -147,7 +160,7 @@ const config = {
             }
         ],
     },
-    capability: {
+    capability: { // capability 페이지
         items : {
             'Technology based' : {
                 text : 'We are active in a high-tech sector and are investing more than ten percent of our turnover in development.'
@@ -167,7 +180,7 @@ const config = {
         msg: 'The latest news, events and updates from Transwave Photonics.',
         data : [
             {
-                aid: 'news1',
+                aid: 'news1', // 페이지 해시로 사용
                 image: 'https://picsum.photos/id/242/300/200',
                 title: 'title1 : How the CHIPS Act Will Impact Engineers',
                 desc: 'The $52 billion spending plan outlined in the CHIPS and Science Act that has been signed into law has significant implications for the semiconductor ecosystem—from chip manufacturers to engineers and production teams.\n\n\
@@ -192,7 +205,7 @@ const config = {
         ]
     },
     contact : { // contact 메뉴 페이지 구성
-        inputs : [
+        inputs : [ // 입력항목 default
             {
                 text : 'First Name'
             },
@@ -208,7 +221,7 @@ const config = {
         ]
     },
     legal : {
-        patents : [ //관련 웹 링크 (새창)
+        patents : [ // patent 관련 문서 링크 목록
             {
                 url: 'https://patents.google.com/patent/US11211773B2/',
                 title : 'Quantum cascade laser with monolithically integrated passive waveguide'
@@ -219,10 +232,25 @@ const config = {
             }
         ],
         termsofuse : {
-            file : 'terms.txt'
+            file : 'terms.txt' // txt 파일로 정리된 문서
+        },
+        policy : {
+            link : 'https://www.privacypolicies.com/live/d660c899-5381-4786-8eae-bd0b6d54ae66' // legal 서비스에서 발행하는 링크주소
         }
     },
-    footers : { // 푸터 구성 Quick Links 
+    career : { // careers 페이지 
+        subTitle : 'JOIN THE TRANSWAVE PHOTONICS TEAM!',
+        headImage: 'https://cdn.pixabay.com/photo/2018/12/27/09/07/businessman-3897246_1280.jpg',
+        jobs: [
+            // {
+            //     title : 'Senior Product Designer',
+            //     desc: "As a Senior Product Designer, you’ll be driving design excellence, creativity, and critical thinking at TWP. Our audience is comprised of people seeking to make substantial changes in their habits and life. As such, this opportunity will challenge you to think deeply about their needs, mindset, and motivations in order to imagine original solutions that are clear, concise, empathetic, supportive, and non-judgmental. You’ll be at the forefront of defining new ways to track progress, help people stay motivated, and continuously engage people in a lengthy journey of confidence-building and taking on step-wise challenges. You’ll have the unique opportunity to imagine, lead, and help bring to market a broad range of products and deliverables across hardware, multiple mobile and Web applications for a variety of audiences including consumers, behavioral coaches, content creators, and more. \
+            //     Flexibility to work remotely, in the office, or hybrid. \
+            //     We are an equal opportunity employer and value diversity at our company. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status. "
+            // }
+        ]
+    },
+    footers : { // 푸터 구성 - legal 정보
         'Privacy & Cookie Policy' : 'legal.html#policy',
         'Terms of Use' : 'legal.html#termsofuse',
         'Patents' : 'legal.html#patents',

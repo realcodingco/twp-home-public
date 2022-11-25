@@ -34,7 +34,6 @@ function contact(scheme) {
     
     BX.component(contact.textareaField).text('Question').appendTo(form);
     BX.components.SubmitBtn.bx().appendTo(form);
-    // BX.component(contact.submitButton).appendTo(form);
 
     return b;
 }

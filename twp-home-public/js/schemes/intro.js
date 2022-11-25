@@ -69,12 +69,6 @@ const intro = {
     },
     line: { // 한줄 구분 점선
         kind: 'hr',
-        style: {
-            width: '30%',
-            border: 0,
-            borderTop: '3px dashed',
-            margin: '100px auto'
-        }
     },
     linkBanner: {
         kind: 'div',

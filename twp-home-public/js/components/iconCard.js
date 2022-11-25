@@ -29,7 +29,6 @@ BX.regist('IconCard', compData);
  */
 function iconCard(scheme) {
     const b = box().color('#f7f7f7').paddingBottom(50);
-
     BX.component(card.cardHead).appendTo(b).text(scheme.headTitle);
     const wrap = BX.component(card.cardWrap).appendTo(b);
     

@@ -26,8 +26,14 @@ const capability = {
         ]
     },
     gradImgBox: {
-        kind: 'box',
-        className: 'gradImg',
+        kind: 'box', 
+        className: 'capaBanner',
+        children: [
+            {
+                kind: 'box' ,
+                className: 'gradImg', 
+            }
+        ]
     },
     itemBg : {
         kind: 'box',
@@ -38,18 +44,7 @@ const capability = {
         className: 'capabilityItem',
         children: [
             {
-                kind: 'box',
-                style: {
-                    width: 120,
-                    height: 120,
-                    borderRadius: 120,
-                    background: 'rgba(111,146,207,0.8)',
-                    padding: '25px 0px 0px 48px',
-                    fontSize: 45,
-                    color: 'white',
-                    boxShadow : '0 10px 40px rgb(0 0 0 / 10%)',
-                    outline: '2px dashed ' + config.keyColor
-                }
+                kind: 'box'
             },
             {
                 kind: 'box',

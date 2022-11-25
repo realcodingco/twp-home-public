@@ -5,6 +5,12 @@ h2.introTitle {
     font-weight: bold;
     color: var(--main);
 }
+hr {
+    width: 30%;
+    border: 0px;
+    border-top: 3px dashed !important;
+    margin: 100px auto !important;
+}
 .teamWrap {
     width: auto;
     height: auto;
@@ -56,6 +62,8 @@ h2.introTitle {
     padding: 25px;
     font-size: 16px;
     transform: rotateY(-180deg);
+    word-break: keep-all;
+    line-height: 14px;
 }
 .memberImage .imgItem.back::before{
     content: "";
@@ -73,6 +81,8 @@ h2.introTitle {
 }
 .memberImage:hover .imgItem.back {
     transform: rotateY(0deg);
+    word-break: keep-all;
+    line-height: 14px;
 }
 .aboutBanner {
     width: 80%;
@@ -146,6 +156,7 @@ h2.introTitle {
 @media (max-width: 720px) {
     .aboutBanner {
         height: auto;
+        width: 100%;
     }
     .aboutBanner a {
         display: block;
@@ -155,5 +166,8 @@ h2.introTitle {
     }
     .aboutBanner a div {
         width: 100%;
+    }
+    hr {
+        width: 80%;
     }
 }

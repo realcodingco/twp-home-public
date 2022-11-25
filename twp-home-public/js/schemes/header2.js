@@ -21,8 +21,8 @@ const header2 = {
                 kind: 'img',
                 style: {
                     float: 'left',
-                    width: 235,
-                    height: 90,
+                    width: 200,
+                    height: 'auto',
                     padding: 10,
                 }
             },

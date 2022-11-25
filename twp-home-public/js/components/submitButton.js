@@ -46,7 +46,7 @@ function sendEmail() {
     const name = submitContent.FirstName + ' ' + submitContent.LastName;
 
     // 메일 받는사람
-    const to = 'tohj@realcoding.co'; // config.email로 변경..
+    const to = config.email;
     // 제목
     const subject = `[Homepage/Inbound] Message from ${name}`;
     // 내용

@@ -25,30 +25,24 @@ BX.regist('News', compData);
  * @param {object} scheme 
  * @returns 뉴스 리스트 box
  */
-function news(scheme) {
-    const b = BX.component(news.wrap);
+function news(scheme) { //
+    const b = box();
+    BX.component(schemes.pageHead).appendTo(b).text('News');
 
-    for(let i=0; i<scheme.length; i++) {
-        const article = BX.component(news.article).appendTo(b);
-        article.children()[0].children[0].innerHTML = scheme[i].title;
-        article.children()[0].children[1].children[0].innerHTML = scheme[i].desc;
-        article.children()[0].children[2].innerHTML = new Date(scheme[i].time).toLocaleDateString('en-US',{year: 'numeric', month: 'short', day: '2-digit'});
-        article.children()[1].src = scheme[i].image;
+    const wrap = BX.component(news.wrap).appendTo(b);
+    scheme.data.forEach(element => {
+        const newsBox = BX.component(card.newsBox).appendTo(wrap);
+        newsBox[0].href = 'article.html#' + element.aid;
+        newsBox.find('.image')[0].style.backgroundImage = 'url(' + element.image + ')';
+        newsBox.find('h4')[0].innerHTML = element.title;
+        newsBox.find('time')[0].innerHTML = new Date(element.time).toLocaleDateString('en-En', {
+            year: 'numeric', 
+            month: 'long',
+            day: 'numeric',
+        });
+    });
 
-        $(article).addClass(scheme[i].aid); //아티클 id 클래스명으로 추가
-    }
     return b;
-}
-
-/**
- * 뉴스목록에서 뉴스 클릭 이벤트
- */
-function openArticle(e) {
-    const className = $(e.target).closest('.newslist')[0].className
-    const articleId = className.substring(9); // 'newslist '제외한 문자열    
-    const anchor = $($(e.target).closest('.newslist')[0]).find('a')[0];
-    anchor.href = 'article.html#' + articleId;
-    anchor.click();
 }
 
 

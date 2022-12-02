@@ -11,11 +11,8 @@ const connect = {
                 },
                 children: [
                     {
-                        kind: 'h6',
-                        text: 'Ready to get started?',
-                        style: {
-                            color: 'black',
-                        }
+                        kind: 'h4', //
+                        text: 'Ready to get started?'
                     },
                     {
                         kind: 'h4',

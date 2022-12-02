@@ -30,11 +30,14 @@ const contact = {
             fontSize: '2.5em',
             textAlign: 'center',
             marginTop: 30,
-            color: config.keyColor
+            color: homepage.keyColor
         }
     },
     inputField: {
         kind: 'box',
+        style: {
+            textAlign: 'left'
+        },
         children: [
             {
                 kind: 'label',
@@ -57,6 +60,9 @@ const contact = {
     },
     textareaField: {
         kind: 'box',
+        style: {
+            textAlign: 'left'
+        },
         children: [
             {
                 kind: 'label',

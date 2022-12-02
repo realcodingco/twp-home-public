@@ -31,14 +31,31 @@ function iconCard(scheme) {
     const b = box().color('#f7f7f7').paddingBottom(50);
     BX.component(card.cardHead).appendTo(b).text(scheme.headTitle);
     const wrap = BX.component(card.cardWrap).appendTo(b);
+    const navbg = box().appendTo(b).size('100%', 'auto').align('center').marginTop('-50px').addClass('nav-button');
     
-    scheme.tags.forEach(o => {
+    scheme.tags.forEach((o, i) => {
         const cardBox = BX.component(card.cardBox).appendTo(wrap);
         cardBox.find('img')[0].src = o.icon;
         cardBox.find('h4')[0].innerHTML = o.title;
         cardBox.find('p')[0].innerHTML = o.text;
-    });
 
+        // 내비게이션 점 붙이기
+        const dot = BX.component(slideBanner.moveBtn).appendTo(navbg); // 하단 이동점 붙이기
+        if(i == 0) dot.addClass('active');
+
+        dot.click(e => {
+            console.log('click')
+            const idx = $(e.target).index() + 1;
+            $('.nav-button :not(:nth-child('+idx+'))').removeClass('active');
+            $(e.target).addClass('active');
+            // 선택한 카드가 중앙으로 오도록
+            const target = $('.cardWrap').children()[idx-1];
+            target.scrollIntoView({inline: 'center', behavior: "smooth", block: 'nearest'})
+            $('.cardWrap :not(:nth-child('+idx+'))').removeClass('on');
+            $(target).addClass('on');
+        });
+    });
+    
     const rightBtn = BX.component(slideBanner.rightBtn).appendTo(b);
     const leftBtn = BX.component(slideBanner.leftBtn).appendTo(b);
     rightBtn.click(scrollRight);
@@ -52,15 +69,15 @@ function iconCard(scheme) {
  */
  function scrollRight(e) {
     const cardBox = $('.cardWrap')[0];
-    cardBox.scrollTo(cardBox.scrollLeft + 430, 500);
+    cardBox.scrollTo(cardBox.scrollLeft + Math.round(cardBox.scrollWidth / $('.cardWrap').children().length), 500);
 
     setTimeout(() => {
-        if(cardBox.scrollLeft >= cardBox.scrollWidth - $('.cardWrap')[0].offsetWidth)
+        if(cardBox.scrollLeft + 1 >= cardBox.scrollWidth - $('.cardWrap')[0].offsetWidth)
             $(this)[0].style.visibility = 'hidden';
 
         if(cardBox.scrollLeft > 0 )
             $(this).next()[0].style.visibility = 'visible';
-    }, 500);
+    }, 510);
 }
 
 /**
@@ -68,7 +85,7 @@ function iconCard(scheme) {
  */
 function scrollLeft(e) {
     const cardBox = $('.cardWrap')[0];
-    cardBox.scrollTo(cardBox.scrollLeft - 430, 500);
+    cardBox.scrollTo(cardBox.scrollLeft - Math.round(cardBox.scrollWidth / $('.cardWrap').children().length), 500);
     
     setTimeout(() => {
         if(cardBox.scrollLeft == 0) 
@@ -76,5 +93,5 @@ function scrollLeft(e) {
     
         if(cardBox.scrollLeft <= (cardBox.scrollWidth / 2))
             $(this).prev()[0].style.visibility = 'visible';
-    }, 500);   
+    }, 510);   
 }

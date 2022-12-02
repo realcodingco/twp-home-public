@@ -5,7 +5,6 @@ const career = {
     }, 
     head : {
         kind: 'box',
-        text: "CAREERS",
         style: {
             height: 200,
             marginTop: '-200px',
@@ -14,13 +13,12 @@ const career = {
             fontSize: 40,
             padding: 30,
             fontWeight: 'bold',
-            color: config.keyColor,
+            color: homepage.keyColor,
             zIndex: 2
         },
         children: [
             {
                 kind: 'p',
-                text: config.career.subTitle,
                 style: {
                     fontSize: 20,
                     color: 'black'
@@ -41,7 +39,6 @@ const career = {
         children: [
             {
                 kind: 'p',
-                text: "See if there's a position for you",
                 style: {
                     fontSize: 14,
                     fontWeight: 300,
@@ -69,11 +66,11 @@ const career = {
                     padding: 30,
                     background: '#f7f7f7',
                     borderRadius: 10,
-                },
+                }
             },
             {
                 kind:'box',
-                html: 'if you interest in our team contact us.' + '<br><a href="mailto:' + config.email + '?subject=Apply for job opening">' + config.email + '</a>',
+                className: 'applyBox',
                 style: {
                     width: '80%',
                     textAlign: 'left',
@@ -87,43 +84,54 @@ const career = {
     },
     jobTitle: {
         kind: 'box',
-        style: {
-            textAlign: 'left',
-            marginTop: 10
-        },
+        className: 'job-title-box',
         children: [
             {
                 kind: 'box',
+                onClick: 'showJobBoard',
                 style: {
                     fontSize: 20,
                     marginBottom: 10,
-                    padding: 10,
+                    padding: 20,
                     background: 'white',
                     borderRadius: 10,
+                    paddingRight: 60,
+                    wordBreak: 'keep-all'
                 },
                 children: [
                     {
+                        kind: 'span', // deadline text
+                        style: {
+                            fontSize: 10,
+                            color: 'lightgray',
+                            marginLeft: 10,
+                            fontWeight :300,
+                        }
+                    },
+                    {
                         kind: 'span',
+                        onClick: e => {
+                            e.stopPropagation();
+                        },
                         className: 'material-symbols-outlined',
-                        text : 'arrow_drop_down',
+                        text : 'arrow_right',
                         style: {
                             position: 'absolute',
-                            top : 5,
+                            top : 15,
                             right: 15,
                             fontSize: 40
                         }
                     }
                 ]
             },
-            {
-                kind: 'box',
-                style: {
-                    textAlign: 'justify',
-                    wordBreak: 'keep-all',
-                    fontWeight: 300,
-                    padding: 20
-                },
-            }
         ]
+    },
+    jobBox: {
+        kind: 'box',
+        className: 'job-box'
+    },
+    jobBoard: {
+        kind: 'box',
+        className: 'jobposting'
     }
 }

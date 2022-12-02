@@ -29,24 +29,33 @@ let slider = undefined;
 function slideBanner(scheme) {
     const b = box().size('100%', 400).appendTo(topBox);
     const banner = BX.component(slideBanner.banner).appendTo(b);
+    const btn = BX.component(slideBanner.slideBtn).appendTo(b);
+    BX(btn.children()[0]).click(moveNext);
+    BX(btn.children()[1]).click(movePrev);
+
     if(scheme) {
         for(var i=0; i<scheme.resource.length; i++){
-            const img = BX.component(slideBanner.bannImage);
+            const pack = box().appendTo(banner); 
+            const img = BX.component(slideBanner.bannImage).appendTo(pack);
             img[0].src = scheme.resource[i].image;
-            const txt = BX.component(slideBanner.bannText);
+            const txt = BX.component(slideBanner.bannText).appendTo(pack);
             txt[0].innerHTML = scheme.resource[i].text;
             if(!banner.children()[i]) {
                 const child = document.createElement('div');
                 banner[0].appendChild(child);
             }
-            banner.children()[i].appendChild(img[0]);
-            banner.children()[i].appendChild(txt[0]);
+            const dot = BX.component(slideBanner.moveBtn).appendTo(btn.children()[2]); // 하단 이동점 붙이기
+            if(i == 0) dot.addClass('active');
+
+            dot.click(e => {
+                const idx = $(e.target).index() + 1;
+                $('.move-button :not(:nth-child('+idx+'))').removeClass('active');
+                $(e.target).addClass('active');
+                slider.move(idx);
+            });
         }
     }
-
-    const btn = BX.component(slideBanner.slideBtn).appendTo(b);
-    BX(btn.children()[0]).click(moveNext);
-    BX(btn.children()[1]).click(movePrev);
+    
     slider = new Slider("#slider1", "H");
 
     return b;
@@ -72,7 +81,7 @@ function movePrev() {
  * @param {*} type "V" or "H"
  * @returns 
  */
-function Slider(target, type){ 
+function Slider(target, type){  //
     // 상태
     let index = 1;
     let isMoved = true;
@@ -94,22 +103,24 @@ function Slider(target, type){
     const container = document.createElement("div");
     container.style["display"] = "flex";
     container.style["flex-direction"] = type === "V" ? "column" : "row";
-    container.style["width"] = '100%'//'sliderRects.width + "px";
-    container.style["height"] = '100%'// sliderRects.height + "px";
+    container.style["width"] = '100%'; //sliderRects.width + "px";
+    container.style["height"] = '100%'; //sliderRects.height + "px";
     container.style["transform"] = translate(index);
-
+    
     // 슬라이더 화면 목록
-    let boxes = [].slice.call(slider.children);
+    let boxes = [].slice.call(slider.children); 
     boxes = [].concat(boxes[boxes.length - 1], boxes, boxes[0]);
-
+    
     // 슬라이더 화면 스타일
     const size = boxes.length;
+    const col = ['red', 'green', 'blue', 'white', 'pink']
     for (let i = 0; i < size; i++) {
-        const box = boxes[i];
+        const box = boxes[i]; 
         box.style["flex"] = "none";
         box.style["flex-wrap"] = "wrap";
         box.style["height"] = "100%";
         box.style["width"] = "100%";
+        // box.style["background"] = col[i];
         container.appendChild(box.cloneNode(true));
     }
 
@@ -143,7 +154,7 @@ function Slider(target, type){
         move: function (i) {
             if (isMoved === true) {
                 index = i;
-                container.style["transition"] = transform;
+                container.style["transition"] = 'initial' //transform;
                 container.style["transform"] = translate(index);
             }
         },

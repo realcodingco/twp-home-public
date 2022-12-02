@@ -27,7 +27,7 @@ BX.regist('Article', compData);
  */
 function article(scheme) {
     const b = box().align('center').paddingBottom(100).color('rgb(181, 207, 246, 0.2)');
-    const articleData = config.newContent.data.filter(i => i.aid == scheme.aid)[0];
+    const articleData = homepage.newsContent.data.filter(i => i.aid == scheme.aid)[0];
     const title = BX.component(article.head).text(articleData.title).appendTo(b);
     
     $(title[0]).find('p')[0].innerText = new Date(articleData.time).toLocaleDateString('en-En', {

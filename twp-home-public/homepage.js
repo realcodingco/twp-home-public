@@ -1,9 +1,10 @@
 const config = {
     keyColor: '#2C5592', // 주요 컬러
     cname : 'TransWave Photonics', // 회사명
-    ci : './style/ci1.png',
+    ci : './style/images/ci1.png',//'https://transwavephotonics.files.wordpress.com/2018/11/logo-new-black.png',
     email : 'info@transwavephotonics.com',
     phone : '000-0000',
+    favicon: './style/images/favicon.png',
     copyright : '© Copyright TransWave Photonics',
     address :  '8711 Burnet Rd. Ste. E55, Austin, TX 78757',
     submitSuccessMsg : 'Thanks for getting in touch with us', // contact 페이지 전송 성공 메시지
@@ -74,6 +75,12 @@ const config = {
                 head: 'Photonic systems',
                 image: 'https://transwavephotonics.files.wordpress.com/2018/11/taper.png?w=316&h=324',
                 text: 'Photonic systems that we develop, customize, or prototype find various applications including communications, integrated sensing, biomedicine, environmental monitoring, and defense and homeland security.<br><br>\
+    TransWave Photonics recently received a STTR Phase 2 award for development of monolithic mid-infrared beam steering systems, sponsored by Army Research Office.'
+            },
+            {
+                head: 'Another systems',
+                image: 'https://picsum.photos/500',
+                text: '...Photonic systems that we develop, customize, or prototype find various applications including communications, integrated sensing, biomedicine, environmental monitoring, and defense and homeland security.<br><br>\
     TransWave Photonics recently received a STTR Phase 2 award for development of monolithic mid-infrared beam steering systems, sponsored by Army Research Office.'
             }
         ]
@@ -161,22 +168,34 @@ TransWave Photonics recently received a STTR Phase 2 award for development of mo
         ],
     },
     capability: { // capability 페이지
-        items : {
-            'Technology based' : {
-                text : 'We are active in a high-tech sector and are investing more than ten percent of our turnover in development.'
+        items : [
+            {
+                title : 'Technology based',
+                text : 'We are active in ',
+                image : 'https://picsum.photos/300' ,
+                desc : 'a high-tech sector and are investing more than ten percent of our turnover in development.'
             },
-            'Applicable' : {
-                text : 'Our capability is extended and improved continually according to market needs.'
+            {
+                title : 'Applicable',
+                text : 'Our capability is ',
+                image : 'https://picsum.photos/300' ,
+                desc : 'extended and improved continually according to market needs.'
             },
-            'Reliably produce' : {
-                text : 'We has the technologies, and production processes that make it possible to reliably produce and guarantee the required specifications and quantities.'
+            {
+                title : 'Reliably produce',
+                text : 'We has the technologies, and ',
+                image : 'https://picsum.photos/300' ,
+                desc : 'production processes that make it possible to reliably produce and guarantee the required specifications and quantities.'
             },
-            'Certified Quality' : {
-                text : 'We constantly research and challenge for our technology certification.'
+            {
+                title : 'Certified Quality',
+                text : 'We constantly ',
+                image : 'https://picsum.photos/300' ,
+                desc : 'research and challenge for our technology certification.'
             }
-        }
+        ]
     },
-    newContent : { // news 메뉴 페이지 구성 - article list
+    newsContent : { // news 메뉴 페이지 구성 - article list
         msg: 'The latest news, events and updates from Transwave Photonics.',
         data : [
             {
@@ -198,6 +217,21 @@ TransWave Photonics recently received a STTR Phase 2 award for development of mo
                 aid: 'news3',
                 image: 'https://picsum.photos/seed/725/300/200',
                 title: 'title3 : How the CHIPS Act Will Impact Engineers',
+                desc: 'The $52 billion spending plan outlined in the CHIPS and Science Act that has been signed into law has significant implications for the semiconductor ecosystem—from chip manufacturers to engineers and production teams.\n\n\
+                EE Times asked two design engineers to weigh in on the implications of the Act for engineers in the U.S., in the short and long term. Will it simply help return the design engineering process to status quo pre-2020? Or are there greater changes afoot that will drive a significant shakeup of the semiconductor design and manufacturing process? The answer lies somewhere in between.',
+                time: 1668479675609
+            },
+            {
+                aid: 'news4',
+                image: 'https://picsum.photos/seed/928/300/200',
+                title: 'title4 : How the CHIPS Act Will Impact Engineers',
+                desc: 'The $52 billion spending plan outlined in the CHIPS and Science Act that has been signed into law has significant implications for the semiconductor ecosystem—from chip manufacturers to engineers and production teams.\n\n\
+                EE Times asked two design engineers to weigh in on the implications of the Act for engineers in the U.S., in the short and long term. Will it simply help return the design engineering process to status quo pre-2020? Or are there greater changes afoot that will drive a significant shakeup of the semiconductor design and manufacturing process? The answer lies somewhere in between.',
+                time: 1668479675609
+            },{
+                aid: 'news5',
+                image: 'https://picsum.photos/seed/725/300/200',
+                title: 'title5 : How the CHIPS Act Will Impact Engineers',
                 desc: 'The $52 billion spending plan outlined in the CHIPS and Science Act that has been signed into law has significant implications for the semiconductor ecosystem—from chip manufacturers to engineers and production teams.\n\n\
                 EE Times asked two design engineers to weigh in on the implications of the Act for engineers in the U.S., in the short and long term. Will it simply help return the design engineering process to status quo pre-2020? Or are there greater changes afoot that will drive a significant shakeup of the semiconductor design and manufacturing process? The answer lies somewhere in between.',
                 time: 1668479675609
@@ -239,16 +273,28 @@ TransWave Photonics recently received a STTR Phase 2 award for development of mo
         }
     },
     career : { // careers 페이지 
+        pageTitle: 'CAREERS',
         subTitle : 'JOIN THE TRANSWAVE PHOTONICS TEAM!',
         headImage: 'https://cdn.pixabay.com/photo/2018/12/27/09/07/businessman-3897246_1280.jpg',
+        listTitle: 'Open opportunities',
+        subText: 'See if there\'s a position for you',
         jobs: [
-            // {
-            //     title : 'Senior Product Designer',
-            //     desc: "As a Senior Product Designer, you’ll be driving design excellence, creativity, and critical thinking at TWP. Our audience is comprised of people seeking to make substantial changes in their habits and life. As such, this opportunity will challenge you to think deeply about their needs, mindset, and motivations in order to imagine original solutions that are clear, concise, empathetic, supportive, and non-judgmental. You’ll be at the forefront of defining new ways to track progress, help people stay motivated, and continuously engage people in a lengthy journey of confidence-building and taking on step-wise challenges. You’ll have the unique opportunity to imagine, lead, and help bring to market a broad range of products and deliverables across hardware, multiple mobile and Web applications for a variety of audiences including consumers, behavioral coaches, content creators, and more. \
-            //     Flexibility to work remotely, in the office, or hybrid. \
-            //     We are an equal opportunity employer and value diversity at our company. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status. "
-            // }
-        ]
+            {
+                title : 'Senior Product Designer',
+                deadline: 1669964329060,
+                desc: `As a Senior Product Designer, you’ll be driving design excellence, creativity, and critical thinking at TWP. Our audience is comprised of people seeking to make substantial changes in their habits and life. As such, this opportunity will challenge you to think deeply about their needs, mindset, and motivations in order to imagine original solutions that are clear, concise, empathetic, supportive, and non-judgmental. You’ll be at the forefront of defining new ways to track progress, help people stay motivated, and continuously engage people in a lengthy journey of confidence-building and taking on step-wise challenges. You’ll have the unique opportunity to imagine, lead, and help bring to market a broad range of products and deliverables across hardware, multiple mobile and Web applications for a variety of audiences including consumers, behavioral coaches, content creators, and more. \
+                Flexibility to work remotely, in the office, or hybrid. \
+                We are an equal opportunity employer and value diversity at our company. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status.`
+            },
+            {
+                title : 'job position',
+                deadline: 1668479675609,
+                desc: "As a Senior Product Designer, you’ll be driving design excellence, creativity, and critical thinking at TWP. Our audience is comprised of people seeking to make substantial changes in their habits and life. As such, this opportunity will challenge you to think deeply about their needs, mindset, and motivations in order to imagine original solutions that are clear, concise, empathetic, supportive, and non-judgmental. You’ll be at the forefront of defining new ways to track progress, help people stay motivated, and continuously engage people in a lengthy journey of confidence-building and taking on step-wise challenges. You’ll have the unique opportunity to imagine, lead, and help bring to market a broad range of products and deliverables across hardware, multiple mobile and Web applications for a variety of audiences including consumers, behavioral coaches, content creators, and more. \
+                Flexibility to work remotely, in the office, or hybrid. \
+                We are an equal opportunity employer and value diversity at our company. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status. "
+            }
+        ],
+        applyMsg: 'if you interest in our team contact us.'
     },
     footers : { // 푸터 구성 - legal 정보
         'Privacy & Cookie Policy' : 'legal.html#policy',
@@ -256,4 +302,60 @@ TransWave Photonics recently received a STTR Phase 2 award for development of mo
         'Patents' : 'legal.html#patents',
         'Journal Articles' : 'news.html'
     },
+    connect : { //
+        title: 'Ready to get started?', 
+        msg : 'Contact our team.', 
+        bg : './style/patt1.png', 
+        path: 'contact.html', 
+        btnTxt: 'Let\'s talk'
+    },
+    pages : {
+        about: {
+            title: 'About | TransWave Photonics', 
+            favicon: './style/images/favicon.png'
+        },
+        article: {
+            title: 'News | TransWave Photonics', 
+            favicon: './style/images/favicon.png'
+        },
+        capabilities: {
+            title: 'Capabilities | TransWave Photonics', 
+            favicon: './style/images/favicon.png'
+        },
+        careers: {
+            title: 'Career | TransWave Photonics ', 
+            favicon: './style/images/favicon.png'
+        },
+        contact: {
+            title: 'Contact | TransWave Photonics', 
+            favicon: './style/images/favicon.png'
+        },
+        index: {
+            title: 'TransWave Photonics', 
+            favicon: './style/images/favicon.png'
+        },
+        legal: {
+            title: 'Legal | TransWave Photonics', 
+            favicon: './style/images/favicon.png'
+        },
+        news: {
+            title: 'News | TransWave Photonics', 
+            favicon: './style/images/favicon.png'
+        },
+        technology: {
+            title: 'Technology | TransWave Photonics', 
+            favicon: './style/images/favicon.png'
+        }
+    }
 };
+
+let homepage, ciHeight;
+readData(function(result) {
+    homepage = JSON.parse(result);
+});
+
+function readData(callback) {
+    const json = localStorage.getItem('homepage') || JSON.stringify(config);
+    callback && callback(json);
+}
+

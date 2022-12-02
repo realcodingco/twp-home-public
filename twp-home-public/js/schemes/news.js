@@ -2,12 +2,9 @@
 const news = {
     wrap: {
         kind: 'box',
-        style: {
-            listStyle: 'none',
-            paddingBottom: 100
-        }
+        className: 'gridWrap'
     },
-    article: {
+    article: { //
         kind: 'li',
         className: 'newslist',
         onClick: 'openArticle',

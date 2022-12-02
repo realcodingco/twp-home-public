@@ -1,6 +1,7 @@
 .newsBoxWrap {
-    display: flex;
-    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, auto));
+    /* width: 90%; */
     height: 400;
     margin: 0px auto;
     vertical-align: center;
@@ -66,12 +67,8 @@ a .content{
     transition: all 0.3s ease-out;
     color: black;
     text-decoration: none;
-    cursor: pointer;
+    /* cursor: pointer; */
     overflow: hidden;
-}
-.cardBox:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 1.5em -0.5em rgb(0 0 0 / 30%);
 }
 .cardTop {
     height: 50%;
@@ -102,6 +99,10 @@ a .content{
     background: transparent;
     color: var(--main);
 }
+.cardBox:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 1.5em -0.5em rgb(0 0 0 / 30%);
+}
 .cardBox:hover h4{
     color: white;
     background: var(--main);
@@ -118,6 +119,29 @@ a .content{
     height: 100%;
     border-radius: 0px;
 }
+
+
+.cardBox.on {
+    transform: scale(1.05);
+    box-shadow: 0 0 1.5em -0.5em rgb(0 0 0 / 30%);
+}
+.cardBox.on h4{
+    color: white;
+    background: var(--main);
+    border-color: var(--main_dark);
+}
+.cardBox.on .cardBottom{
+    background: var(--main);
+}
+.cardBox.on p {
+    color: white;
+}
+.cardBox.on img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+}
+
 .cardBottom p {
     font-size: 12px;
     text-align: justify;
@@ -141,6 +165,16 @@ a .content{
 }
 
 @media ( max-width: 880px ) {  /* mobile */
+    
+    .newsBoxWrap {
+        grid-template-columns: repeat(auto-fill, minmax(45%, auto));
+    }
+}
+
+@media ( max-width: 720px ) {  /* pc */
+    .newsBoxWrap {
+        display: block;   
+    }
     .cardWrap {
         display: grid;
         place-items: center;
@@ -153,13 +187,7 @@ a .content{
     .cardBox {
         margin: 20px;
     }
-}
-@media ( max-width: 1040px ) {
-    .newsBoxWrap {
-        display: block;
+    .nav-button {
+        display: none;
     }
-}
-
-@media ( min-width: 880px ) {  /* pc */
-    
 }

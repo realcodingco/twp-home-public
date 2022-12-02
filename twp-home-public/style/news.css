@@ -1,3 +1,10 @@
+.gridWrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, auto));
+    grid-auto-columns: minmax(300px, auto); 
+    /* minmax(auto, 300px); */
+    margin: 100px auto;
+}
 .articleTitle {
     color: #736e84;
     font-size: 24px;
@@ -54,5 +61,12 @@ li.newslist img {
         width: 80%;
         margin: 20px;
     }
-
+    .gridWrap {
+        grid-template-columns: repeat(auto-fill, minmax(45%, auto));
+    }
+}
+@media ( max-width: 720px ) {
+    .gridWrap {
+        display: block;
+    }
 }

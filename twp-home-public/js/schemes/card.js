@@ -7,7 +7,7 @@ const card = {
     newsBoxHead: {
         kind: 'box',
         style: {
-            color: config.keyColor
+            color: homepage.keyColor
         },
         children: [
             {
@@ -88,7 +88,7 @@ const card = {
             margin: '40px auto',
             textAlign: 'left',
             fontWeight: 'bold',
-            color: config.keyColor
+            color: homepage.keyColor
         }
     },
     cardBox: {
@@ -125,5 +125,9 @@ const card = {
                 ]
             } 
         ]
-    }
+    },
+    moveBtn: {
+        kind: 'span',
+        className: "move-button-item"
+    },
 };

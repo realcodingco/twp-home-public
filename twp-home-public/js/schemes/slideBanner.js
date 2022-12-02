@@ -55,10 +55,16 @@ const slideBanner = {
                 kind: 'button',
                 html: '<i class="fa-solid fa-chevron-left"></i>',
                 
+            },
+            {
+                kind: 'box',
+                className: 'move-button', // 이동 점 버튼 children
             }
         ]
-        
-        
+    },
+    moveBtn: {
+        kind: 'span',
+        className: "move-button-item"
     },
     banner: { // 배너 wrap
         kind: 'section',
@@ -68,7 +74,7 @@ const slideBanner = {
             height: 400,
             background: '#f7f7f7',
             overflow: 'hidden',
-            padding: 20
+            padding: 20,
         },
         children: [] //배너 수에 따라.. 
     }

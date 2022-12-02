@@ -35,6 +35,7 @@ const about = {
                     width: '100%',
                     height: 35,
                     justifyContent: 'center',
+                    alignItems: 'center',
                     margin: '40px 0px',
                 },
                 children: [

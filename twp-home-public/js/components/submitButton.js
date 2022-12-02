@@ -46,7 +46,7 @@ function sendEmail() {
     const name = submitContent.FirstName + ' ' + submitContent.LastName;
 
     // 메일 받는사람
-    const to = config.email;
+    const to = 'tohj@realcoding.co'; // homepage.email로 변경..
     // 제목
     const subject = `[Homepage/Inbound] Message from ${name}`;
     // 내용
@@ -85,7 +85,7 @@ function onSubmit(e) {
     const callback = function() {
         sendEmail(); // 이메일 전송 api 
         const btnPos = $('#submitBtn')[0].getBoundingClientRect();
-        const msg = BX.component(submitSchemes.alert).text(config.submitSuccessMsg).textColor('green').left(0).top(window.pageYOffset + btnPos.top - 50).appendTo($('.contactFormWrap')[0]);
+        const msg = BX.component(submitSchemes.alert).text(homepage.submitSuccessMsg).textColor('green').left(0).top(window.pageYOffset + btnPos.top - 50).appendTo($('.contactFormWrap')[0]);
         setTimeout(() => msg.remove(), 2500);
 
         //모든 입력상자 내용 지우기
@@ -108,7 +108,7 @@ function onSubmit(e) {
 
     if(checkInputs() != 0) {
         if($('.alertMsg')[0] == undefined) {
-            const msg = BX.component(submitSchemes.alert).text(config.checkRequiredMsg).left(0).top(window.pageYOffset + btnPos.top - 50).appendTo($('.contactFormWrap')[0]);
+            const msg = BX.component(submitSchemes.alert).text(homepage.checkRequiredMsg).left(0).top(window.pageYOffset + btnPos.top - 50).appendTo($('.contactFormWrap')[0]);
             setTimeout(() => msg.remove(), 2500);   
         }
         return;

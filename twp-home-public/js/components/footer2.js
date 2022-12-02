@@ -39,20 +39,20 @@ function footer2(scheme) {
             icon : 'mail'
          } 
     ];
-    box().appendTo(info).text('CONTACT').textColor(config.keyColor).marginBottom(10).fontWeight('bold');
+    box().appendTo(info).text('CONTACT').textColor(homepage.keyColor).marginBottom(10).fontWeight('bold');
     for(var i=0; i<appendInfos.length; i++) {
         const line = BX.component(footer2.infoText).appendTo(info);
         line.children()[0].innerText = appendInfos[i].icon;
-        line.children()[1].innerText = config[appendInfos[i].key];
+        line.children()[1].innerText = homepage[appendInfos[i].key];
     }
 
     const etc = BX.component(footer2.resource).appendTo(bg).padding(20);
-    box().appendTo(etc).text('QUICK LINKS').textColor(config.keyColor).marginBottom(10).fontWeight('bold');
-    Object.keys(config.footers).forEach(function(title) {
+    box().appendTo(etc).text('QUICK LINKS').textColor(homepage.keyColor).marginBottom(10).fontWeight('bold');
+    Object.keys(homepage.footers).forEach(function(title) {
         const el = BX.component(footer2.link).appendTo(etc).text(title);
         let paths = location.pathname.split('/');
         paths.pop();
-        paths.push(config.footers[title]);
+        paths.push(homepage.footers[title]);
         const url = paths.join('/');
         el[0].href = url;
     });

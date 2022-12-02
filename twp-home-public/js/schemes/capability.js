@@ -60,5 +60,49 @@ const capability = {
                 ]
             }
         ]
+    },
+    spreadBox: {
+        kind: 'box',
+        style: {
+            textAlign: 'center'
+        },
+        children: [
+            {
+                kind: 'box',
+                className: 'spreadBox',
+                onClick: e => {
+                    const mom = $(e.target).parents('.spreadBox');
+                    $(mom).find('.detailBox').slideToggle();
+                    $(mom).find('span')[0].innerText = $(mom).find('span')[0].innerText == 'expand_less' ? 'expand_more' : 'expand_less';
+                },
+                children: [
+                    {
+                        kind: 'img'
+                    },
+                    {
+                        kind: 'box',
+                        children: [
+                            {
+                                kind: 'p'
+                            },
+                            {
+                                kind: 'p'
+                            },
+                            {
+                                kind : 'span',
+                                className: 'material-symbols-outlined',
+                                text: 'expand_more'
+                            },
+                        ]
+                    },
+                    { // 세부 내용
+                        kind: 'box',
+                        className: 'detailBox'
+                    },
+                    
+                ]
+            },
+            
+        ]
     }
 };

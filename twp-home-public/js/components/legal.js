@@ -22,7 +22,7 @@ BX.regist('Termsofuse', {bx: termsofuse});
  * @returns 페이지 box
  */
 function legal(scheme) {
-    const target = document.location.hash.slice(1);
+    const target = document.location.hash == '' || document.location.hash == '#page' ? 'patents' : document.location.hash.slice(1); // admin페이지 처리
     const b = box()
     BX.component(intro.head).appendTo(b).text('Legal Information');
 

@@ -22,9 +22,12 @@ BX.regist('Connect', compData);
  */
 function connect(scheme) {
     const b = BX.component(connect.wrap);
+    b.background(homepage.keyColor + ' url("' + scheme.bg + '") center center/150px space fixed');
+    $(b).find('h4')[0].innerText = scheme.title;  //
+    $(b).find('h4')[1].innerText = scheme.msg; 
     const button = $(b).find('a')[0]; 
-    button.href = scheme.path;
-
+    button.href = scheme.path; 
+    button.text = scheme.btnTxt;
+    
     return b;
 }
-

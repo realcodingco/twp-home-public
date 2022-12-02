@@ -1,6 +1,8 @@
 // capabilities 페이지 구성
-const header = BX.components.Header2.bx(config.header).appendTo(topBox);
+document.title = homepage.pages.capabilities.title || 'Transwave photonics';
+document.querySelector("link[rel='shortcut icon']").href = homepage.pages.capabilities.favicon || homepage.favicon;
 
-BX.components.Capability.bx(config.capability).appendTo(topBox).marginTop($('.header')[0].offsetHeight);
-BX.components.Connect.bx({path: 'contact.html'}).appendTo(topBox);
+const header = BX.components.Header2.bx(homepage.header).appendTo(topBox);
+BX.components.Capability.bx(homepage.capability).appendTo(topBox).marginTop($('.header')[0].offsetHeight);
+BX.components.Connect.bx(homepage.connect).appendTo(topBox);
 BX.components.Footer2.bx().appendTo(topBox);

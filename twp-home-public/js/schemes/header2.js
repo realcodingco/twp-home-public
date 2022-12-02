@@ -2,7 +2,7 @@
 const header2 = {
     header: {
         kind: 'box',
-        className: 'header',
+        className: 'header fixed',
         style: {
             width: '100%',
             height: 'auto',
@@ -19,10 +19,12 @@ const header2 = {
         children: [
             {
                 kind: 'img',
+                className: 'logoImage',
+                onLoad: 'checkHeight()',
                 style: {
                     float: 'left',
                     width: 200,
-                    height: 'auto',
+                    height: 'auto', //106.15,
                     padding: 10,
                 }
             },

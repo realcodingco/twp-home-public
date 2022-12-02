@@ -4,12 +4,12 @@
 }
 a.ci { 
     width: 140px;
-    height: 65px;
+    height: auto;
     margin: 50px;
 }
 a.ci img {
     width: 140px;
-    height: 65px;
+    height: auto;
 }
 a.link {
     width: 100%;

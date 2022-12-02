@@ -28,7 +28,7 @@ BX.regist('Header2', compData);
 function header2(scheme) {
     const b = BX.component(header2.header);
     const ci = BX.component(header2.ciBox).appendTo(b);
-    $(ci[0]).find('img')[0].src = config.ci;
+    $(ci[0]).find('img')[0].src = homepage.ci;
 
     ci[0].href = scheme.home;
     const menuBox = BX.component(header2.menuBox).appendTo(b);
@@ -67,6 +67,13 @@ function openMenu() {
         $('.menuBox').removeClass('clicked');
     }
 }
+//이미지 onload 함수 - ci이미지 높이 체크
+function checkHeight(e) {
+    ciHeight = $('.header')[0].offsetHeight;
+    if($('.header').next()[0]) {
+        $('.header').next()[0].style.marginTop = ciHeight + 'px';
+    }
+}   
 
 $(window).bind({
     resize : function(){
@@ -75,7 +82,7 @@ $(window).bind({
             $(window).trigger('resizeend');
         }, 100);
     }, resizeend : function(){
-        if(window.innerWidth > 880 && $('.menuBox')[0].className == 'menuBox clicked') { // 모바일 메뉴 상자가 열린 경우
+        if($('.menuBox')[0] && window.innerWidth > 880 && $('.menuBox')[0].className == 'menuBox clicked') { // 모바일 메뉴 상자가 열린 경우
             $('.menuBox').removeClass('clicked');
         } 
     }

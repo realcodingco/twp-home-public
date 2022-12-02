@@ -1,8 +1,9 @@
 // news 페이지 구성
-const header = BX.components.Header2.bx(config.header).appendTo(topBox);
-BX.component(schemes.pageHead).appendTo(topBox).text('News').marginTop($('.header')[0].offsetHeight);
+document.title = homepage.pages.news.title || 'Transwave photonics';
+document.querySelector("link[rel='shortcut icon']").href = homepage.pages.news.favicon || homepage.favicon;
 
-BX.components.News.bx(config.newContent.data).appendTo(topBox);
-
-BX.components.Connect.bx({path: 'contact.html'}).appendTo(topBox);
+const header = BX.components.Header2.bx(homepage.header).appendTo(topBox);
+BX.components.News.bx(homepage.newsContent).appendTo(topBox).marginTop($('.header')[0].offsetHeight);
+//
+BX.components.Connect.bx(homepage.connect).appendTo(topBox);
 BX.components.Footer2.bx().appendTo(topBox);

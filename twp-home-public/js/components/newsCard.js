@@ -33,9 +33,10 @@ function newsCard(scheme) {
     head.find('h2')[0].innerHTML = 'News';
     head.find('p')[0].innerHTML = scheme.msg;
 
+    let sortedCurrent = scheme.data.sort((x, y) => y.time - x.time); // 최신순으로 정렬하기
     const wrap = BX.component(card.newsBoxWrap).appendTo(b);
-
-    scheme.data.forEach(element => {
+    for(var i=0; i<3; i++) { // 3개만 보여주기
+        const element = sortedCurrent[i];
         const newsBox = BX.component(card.newsBox).appendTo(wrap);
         newsBox[0].href = 'article.html#' + element.aid;
         newsBox.find('.image')[0].style.backgroundImage = 'url(' + element.image + ')';
@@ -45,7 +46,7 @@ function newsCard(scheme) {
             month: 'long',
             day: 'numeric',
         });
-    });
+    }
 
     return b;
 }

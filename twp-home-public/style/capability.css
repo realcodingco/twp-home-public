@@ -79,6 +79,73 @@
     flex-direction: column; 
     justify-content: center;
 }
+.spreadBox {
+    box-shadow : 0 10px 40px rgb(0 0 0 / 10%);
+    /* display: flex; */
+    width: 85%;
+    margin: 40px auto;
+    transition: all 0.5s ease-out;
+}
+.spreadBox img {
+    width: 200px;
+    height: 200px;
+}
+.spreadBox p {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 0px;
+    padding: 0px;
+}
+.spreadBox p:nth-child(1) {
+    color: var(--main);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.spreadBox span {
+    width: 40px;
+    height: 40px;
+    float: right;
+    font-weight: 200;
+    color: var(--main);
+    border: 1px solid var(--main);
+    border-radius: 40px;
+    padding: 7px;
+    margin-top: 25px;
+}
+.spreadBox span.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 48
+}
+.spreadBox div:nth-child(2) {
+    padding: 20px;
+    height: 200px;
+    text-align: left;
+    width: calc(100% - 200px);
+}
+.spreadBox:hover {
+    background: var(--main);
+}
+.spreadBox:hover p {
+    color: white;
+}
+.spreadBox:hover span {
+    color: white;
+    border-color: white;
+}
+.detailBox {
+    display: none;
+    width: 100%;
+    height: auto;
+    border-bottom: 4px solid var(--main);
+    padding: 40px 20px;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: left;
+    background: white;
+}
 @media (max-width: 700px) {
     .capabilityItem {
         flex-direction: column
@@ -96,6 +163,12 @@
     }
     .gradImg {
         display: none;
+    }
+    .spreadBox img{
+        width: 100%;
+    }
+    .spreadBox div:nth-child(2) {
+        width: 100%;
     }
 }
 @media (max-width: 950px) {

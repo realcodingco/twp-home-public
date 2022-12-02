@@ -37,7 +37,7 @@ function about(scheme) {
 
     const contBox = BX.component(about.contentBox).appendTo(b);
     scheme.desc.forEach((element, i) => {
-        const btn = BX.component(about.contentTitle);
+        const btn = BX.component(about.contentTitle); //
         btn[0].innerHTML = element.head;
         contBox.children()[0].appendChild(btn[0]); 
         if(i == 0) {
@@ -51,9 +51,8 @@ function about(scheme) {
     timer = setTimeout(function() {
         contCount++;
         if(contCount >= $('.contTitle').length)  contCount = 0;
-        
         $('.contTitle')[contCount].click();
-    }, 2500);
+    }, 1500);
 
     return b;
 }
@@ -63,10 +62,11 @@ function about(scheme) {
  * @param {*} e 
  */
 function showDesc(e) {
-    // clearInterval(timer);
     $('.contTitle').removeClass('on')
     $(e.target).addClass('on');
     
+    $('.contentBox')[0].style.opacity = 0;
+    $('.contentBox').animate({'opacity': '1'}, 700);
     const idx = $(e.target).index();
     $('.contentBox img')[0].src = data.desc[idx].image;
     $('.contentBox span')[0].innerHTML = data.desc[idx].text;

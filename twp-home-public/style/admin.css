@@ -1,0 +1,204 @@
+/* button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+} */
+span.tip {
+    font-size: 20px;
+    color: lightgray;
+    margin-left: 5px;
+    /* display: inline-block; */
+    position: absolute;
+}
+.tip:hover {
+    cursor: help;
+}
+.tip:hover .tip-text {
+    display: block;
+}
+.tip-text {
+    display: none;
+    position: absolute;
+    /* max-width: 200px; */
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 11px;
+    line-height: 15px;
+    letter-spacing: 0px;
+    text-align: left;
+    font-family: sans-serif;
+    color: white;
+    background: var(--main);
+    z-index: 10;
+}
+select {
+    border: none;
+    border-radius: 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 10px;
+    background: transparent;
+}
+select:focus {
+    outline: none;
+}
+.adminHeader > div:nth-child(1) {
+    width: 30px;
+    height: 30px;
+    margin: 16px;
+    padding: 2px 3px;
+    border-radius: 100px;
+    display: none;
+}
+.adminHeader > div:nth-child(1):hover {
+    background: lightgray;
+}
+.adminMenu {
+    width: 200px;
+    height: 100%;
+    background: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    min-width: fit-content;
+    padding: 10px 10px 10px 0px;
+    transition: all 0.5s ease-in;
+}
+.menuCover {
+    width: 100vw;
+    height: calc(100vh - 56px);
+    position: fixed;
+    left: 0; 
+    top: 56;
+    background: rgba(0,0,0,0.7);
+    z-index: 2;
+    display: none;
+}
+.adminBody {
+    width: calc(100% - 200px);
+    height: auto;
+}
+.adminMenuItem {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 0px 50px 50px 0px;
+}
+.adminMenuItem.clicked {
+    background-color: rgb(189, 213, 248);
+}
+.adminMenuItem:hover {
+    background-color: lightgray;
+}
+.adminMenuItem span:nth-child(1) {
+    margin-inline-end: 20px;
+    pointer-events: none;
+    vertical-align: top;
+    color: #444;
+    margin-top: 2px;
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+}
+.adminMenuItem span:nth-child(2) {
+    color: #444;
+    font-size: 14px;
+}
+.editInput input{
+    width: 100%;
+    outline-style: none;
+    background: rgb(247, 247, 247);
+    border: 0px;
+    padding: 8px;
+    font-weight: 500;
+    border-radius: 8px;
+    color: var(--main);
+    /* font-size: 13px; */
+} 
+.editInput input:focus {
+    outline: 1px solid var(--main);
+}
+.pageForm input{
+    width: 40%;
+    outline-style: none;
+    background: rgb(247, 247, 247);
+    border: 0px;
+    padding: 8px;
+    font-weight: 500;
+    border-radius: 8px;
+    color: var(--main);
+    margin: 5px;
+    /* font-size: 13px; */
+}
+.pageForm input:focus {
+    outline: 1px solid var(--main);
+}
+.toggleSwitch {
+    width: 48px;
+    height: 20px;
+    display: block;
+    position: relative;
+    border-radius: 30px;
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+.toggleSwitch .toggleButton {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: gray;
+}
+.blink {
+    animation: blink-effect 200ms step-end 1;
+}
+.toggle.active ~ .toggleSwitch {
+    background: gray;
+}
+
+.toggle.active ~ .toggleSwitch .toggleButton {
+    left: calc(100% - 18px);
+    background: #fff;
+}
+
+.toggleSwitch, .toggleButton {
+    transition: all 0.2s ease-in;
+}
+
+div.sidebar {
+    width: 100%;
+    height: 520px;
+    position: absolute;
+    right: 0;
+    z-index: 11;
+    transition: all .35s;
+}
+div.ace_active-line {
+    background-color: transparent !important;
+}
+@keyframes blink-effect {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media ( max-width: 870px ) {
+    .adminMenu {
+        /* opacity: 0.7; */
+        display: none;
+        position: absolute;
+        z-index: 4;
+    }
+    .adminBody {
+        width: 100%;
+    }
+    .adminHeader > div:nth-child(1) {
+        display: block;
+    }
+}

@@ -31,7 +31,7 @@ const career = {
         style: {
             width: '100%',
             textAlign: 'center',
-            fontSize: 35,
+            fontSize: 28,
             fontWeight: 'bold',
             marginTop: 50,
             color: '#444'
@@ -58,15 +58,7 @@ const career = {
         children: [
             {
                 kind:'box', // list 보여주기
-                className: 'jobList',
-                style: {
-                    width: '80%',
-                    minHeight: '200px',
-                    margin: '0px auto',
-                    padding: 30,
-                    background: '#f7f7f7',
-                    borderRadius: 10,
-                }
+                className: 'jobList' 
             },
             {
                 kind:'box',

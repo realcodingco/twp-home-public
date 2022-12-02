@@ -3,6 +3,14 @@
     background-size : cover !important;
     object-fit : scale-down;
 }
+.jobList {
+    width: 80%;
+    min-height: 200px;
+    margin: 0px auto;
+    padding: 30px;
+    background: #f7f7f7;
+    border-radius: 10px;
+}
 .job-box {
     display: flex;
     flex-direction: row;
@@ -48,4 +56,16 @@
 @keyframes reveal {
     from { transform:translateX(100%); }
     to { transform:translateX(0%); }
+}
+
+@media ( max-width: 720px ) {
+    .jobList {
+        width: 100%;
+    }
+    .jobposting {
+        animation: none;
+    }
+    .job-box {
+        width: 100%;
+    }
 }

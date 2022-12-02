@@ -67,6 +67,6 @@ function showJobBoard(e) {
     const target = $(e.target).parent().next();
     $('.job-box').removeClass('on');
     $(e.target).parent().parent().addClass('on');
-    target[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
+    target[0].scrollIntoView({behavior: 'smooth', block: window.innerWidth < 720? 'start' : 'center', inline: 'center'});
 
 }

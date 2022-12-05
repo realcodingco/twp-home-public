@@ -93,6 +93,10 @@ const career = {
                 children: [
                     {
                         kind: 'span', // deadline text
+                        onClick: e => {
+                            e.stopPropagation();
+                            $(e.target).parent().click();
+                        },
                         style: {
                             fontSize: 10,
                             color: 'lightgray',
@@ -104,6 +108,7 @@ const career = {
                         kind: 'span',
                         onClick: e => {
                             e.stopPropagation();
+                            $(e.target).parent().click();
                         },
                         className: 'material-symbols-outlined',
                         text : 'arrow_right',

@@ -44,15 +44,23 @@ function iconCard(scheme) {
         if(i == 0) dot.addClass('active');
 
         dot.click(e => {
-            console.log('click')
             const idx = $(e.target).index() + 1;
             $('.nav-button :not(:nth-child('+idx+'))').removeClass('active');
             $(e.target).addClass('active');
             // 선택한 카드가 중앙으로 오도록
             const target = $('.cardWrap').children()[idx-1];
-            target.scrollIntoView({inline: 'center', behavior: "smooth", block: 'nearest'})
+            target.scrollIntoView({inline: 'center', behavior: "smooth", block: 'nearest'});
             $('.cardWrap :not(:nth-child('+idx+'))').removeClass('on');
             $(target).addClass('on');
+
+            // 처음과 마지막 dot이면 화살표 숨기기
+            if(idx == 4) {
+                rightBtn[0].style.visibility = 'hidden';
+                leftBtn[0].style.visibility = 'visible';
+            } else if(idx == 1) {
+                rightBtn[0].style.visibility = 'visible';
+                leftBtn[0].style.visibility = 'hidden';
+            }
         });
     });
     

@@ -610,6 +610,7 @@ function compSelect(e) {
 }
 
 /**
+ * component 데이터 관련 메뉴 선택시
  * component edit 버튼 클릭 이벤트
  */
 function openCompEdit(e, key) {
@@ -623,8 +624,8 @@ function openCompEdit(e, key) {
         side.children()[0].style.display = 'none';
         type = 'data';
     }
-    
-    let componentData = homepage[key];
+    totalData[key] = JSON.parse(JSON.stringify(homepage[key])); // 메뉴전환시마다 데이터 복원
+    let componentData = totalData[key];
     
     // 사용자 ui 버전
     if(Array.isArray(componentData)) { // 배열이면
@@ -776,14 +777,16 @@ function closeCompEdit(e) {
  */
 function appendData(e) { 
     e.preventDefault();
-    let key = $('#compSelect')[0].value; 
+    let key = location.hash.slice(1); //$('#compSelect')[0].value; 
     
     // 복사해서 붙여주기
     const clone = $(e.target).prev().clone(true);
     clone[0].style.border = '2px solid red';
     clone[0].id = 'clone';
     $(e.target).before(clone);
-    clone[0].scrollIntoView({behavior: 'smooth'});
+    console.log($(e.target).offset().top)
+    clone[0].scrollIntoView({ behavior: 'smooth'})
+    // $('form')[0].scrollTop({ top : $('form').scrollTop() + 100, behavior: 'smooth' });
 
     // 순서 버튼 텍스트 변경, 호버 이벤트 
     const btn = clone.find('button')[0];
@@ -815,7 +818,7 @@ function appendData(e) {
  */
 function removeData(e) {
     e.preventDefault();
-    let key = $('#compSelect')[0].value; 
+    let key = location.hash.slice(1); //$('#compSelect')[0].value; 
     const deletedEl = $(e.target).parent();
     // 배열의 길이를 줄여.. 
     const firstel = deletedEl.find('textarea')[0];

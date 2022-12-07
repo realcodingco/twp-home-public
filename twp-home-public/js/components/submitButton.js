@@ -46,7 +46,7 @@ function sendEmail() {
     const name = submitContent.FirstName + ' ' + submitContent.LastName;
 
     // 메일 받는사람
-    const to = homepage.email; // homepage.email로 변경..
+    const to = homepage.email;
     // 제목
     const subject = `[Homepage/Inbound] Message from ${name}`;
     // 내용

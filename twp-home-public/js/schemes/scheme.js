@@ -8,7 +8,7 @@ const schemes = {
             background: '#f5f5f5',
             borderTop: '3px solid',
             borderBottom: '1px solid',
-            color: homepage.keyColor,
+            // color: homepage.keyColor,
             fontWeight: 'bold',
             textAlign: 'center',
         }

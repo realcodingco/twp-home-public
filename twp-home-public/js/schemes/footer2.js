@@ -11,7 +11,7 @@ const footer2 = {
                 children: [
                     {
                         kind: 'img',
-                        src: homepage.ci,
+                        // src: homepage.ci,
                     }
                 ]
             },
@@ -48,7 +48,7 @@ const footer2 = {
                     fontSize: 18,
                     fontWeight: 100,
                     lineHeight: '120%',
-                    color: homepage.keyColor
+                    // color: homepage.keyColor
                 }
             },
             {
@@ -70,7 +70,7 @@ const footer2 = {
     },
     copyright: {
         kind:'box',
-        text: homepage.copyright,
+        // text: homepage.copyright,
         style: {
             width: '90%',
             margin: 'auto',

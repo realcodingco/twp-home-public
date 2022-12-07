@@ -11,6 +11,7 @@ const contact = {
     },
     form: {
         kind: 'form',
+        className: 'contact-form',
         style: {
             width: '90%',
             margin: '0px auto',
@@ -30,7 +31,7 @@ const contact = {
             fontSize: '2.5em',
             textAlign: 'center',
             marginTop: 30,
-            color: homepage.keyColor
+            // color: homepage.keyColor
         }
     },
     inputField: {

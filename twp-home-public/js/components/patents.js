@@ -24,13 +24,14 @@ function patents(scheme) {
     const b = box().paddingBottom(200);
     box().appendTo(b).text('Patents').fontSize(35).padding(20);
     const listBg = BX.component(schemes.list).appendTo(b);
-    for(var i=0; i<scheme.length; i++) {
+    const data = scheme.src;
+    for(var i=0; i<data.length; i++) {
         const li = document.createElement('li');
         listBg[0].appendChild(li);
         const a = document.createElement('a');
         li.appendChild(a);
-        a.innerText = scheme[i].title;
-        a.href = scheme[i].url;
+        a.innerText = data[i].title;
+        a.href = data[i].url;
         a.target = '_blank';
         a.style.textDecoration = 'none';
         a.style.color = 'black';

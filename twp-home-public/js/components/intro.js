@@ -36,14 +36,13 @@ function intro(scheme) {
     const wrap = BX.component(intro.contentWrap).appendTo(b);
 
     const links = scheme.links;
-    
-    Object.keys(links).forEach(function(o) {
+    for(var l=0; l<links.length; l++){
         const banner = BX.component(intro.linkBanner).appendTo(wrap);
-        $(banner).find('a')[0].href = links[o].href;
-        $(banner).find('img')[0].src = links[o].image;
-        $(banner).find('div').children()[0].innerHTML = o;
-        $(banner).find('div').children()[1].innerHTML = links[o].text;
-    });
+        $(banner).find('a')[0].href = links[l].href;
+        $(banner).find('img')[0].src = links[l].image;
+        $(banner).find('div').children()[0].innerHTML = links[l].title;
+        $(banner).find('div').children()[1].innerHTML = links[l].text;
+    };
 
     BX.component(intro.line).appendTo(wrap);
 

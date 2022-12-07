@@ -30,7 +30,7 @@ function article(scheme) {
     const articleData = homepage.newsContent.data.filter(i => i.aid == scheme.aid)[0];
     const title = BX.component(article.head).text(articleData.title).appendTo(b);
     
-    $(title[0]).find('p')[0].innerText = new Date(articleData.time).toLocaleDateString('en-En', {
+    $(title[0]).find('p')[0].innerText = new Date(Number(articleData.time)).toLocaleDateString('en-En', {
         year: 'numeric', 
         month: 'long',
         day: 'numeric',
@@ -41,7 +41,10 @@ function article(scheme) {
         img[0].src = articleData.image;
     }
 
-    BX.component(article.text).text(articleData.desc).appendTo(b)
+    const articleText = BX.component(article.text).appendTo(b);
+    articleText[0].innerHTML = articleData.desc;
+
     box().appendTo(b).html('<a href="news.html" style="text-decoration:none; color:black; float:left; margin-left:50px;">< Back to list </a>');
+
     return b;
 } 

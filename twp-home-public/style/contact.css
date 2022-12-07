@@ -1,16 +1,16 @@
-form :nth-child(odd):not(:nth-child(5)) {
+.contact-form :nth-child(odd):not(:nth-child(5)) {
     grid-column: 1 / 7;
     margin-top: 20px;
 }
-form :nth-child(even) {
+.contact-form :nth-child(even) {
     grid-column: 7 / 13;
     margin-top: 20px;
 }
-form :nth-child(5) {
+.contact-form :nth-child(5) {
     grid-column: 1 / 13;
     margin-top: 20px;
 }
-form :last-child {
+.contact-form :last-child {
     grid-column: 6 / 8;
 }
 /* .submitButton {
@@ -54,10 +54,10 @@ form :last-child {
 }
 
 @media ( max-width: 720px ) {  /* mobile */
-    form :nth-child(odd):not(:nth-child(5)) {
+    .contact-form :nth-child(odd):not(:nth-child(5)) {
         grid-column: 1 / 13;
     }
-    form :nth-child(even) {
+    .contact-form :nth-child(even) {
         grid-column: 1 / 13;
     }
 }

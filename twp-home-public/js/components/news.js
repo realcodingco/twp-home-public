@@ -27,7 +27,7 @@ BX.regist('News', compData);
  */
 function news(scheme) { //
     const b = box();
-    BX.component(schemes.pageHead).appendTo(b).text('News');
+    BX.component(schemes.pageHead).appendTo(b).text('News').textColor(homepage.keyColor);
 
     const wrap = BX.component(news.wrap).appendTo(b);
     scheme.data.forEach(element => {
@@ -35,7 +35,7 @@ function news(scheme) { //
         newsBox[0].href = 'article.html#' + element.aid;
         newsBox.find('.image')[0].style.backgroundImage = 'url(' + element.image + ')';
         newsBox.find('h4')[0].innerHTML = element.title;
-        newsBox.find('time')[0].innerHTML = new Date(element.time).toLocaleDateString('en-En', {
+        newsBox.find('time')[0].innerHTML = new Date(Number(element.time)).toLocaleDateString('en-En', {
             year: 'numeric', 
             month: 'long',
             day: 'numeric',

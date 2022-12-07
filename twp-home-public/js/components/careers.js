@@ -29,7 +29,7 @@ function careers(scheme) {
     const b = box();
     const title = BX.component(career.topTitle).appendTo(b); //배너
     title[0].style.background = 'url("' + scheme.headImage + '")';
-    const pageHead = BX.component(career.head).appendTo(b).align('center').text(scheme.pageTitle);
+    const pageHead = BX.component(career.head).appendTo(b).align('center').text(scheme.pageTitle).textColor(homepage.keyColor);
     pageHead.find('p')[0].innerText = scheme.subTitle;
 
     const bg = BX.component(career.listWrap).appendTo(b).text(scheme.listTitle);
@@ -46,7 +46,7 @@ function careers(scheme) {
             const jobBg = BX.component(career.jobBox).appendTo(listBg);
             const jobTitle = BX.component(career.jobTitle).appendTo(jobBg);
             $(jobTitle.children()[0]).text(opening[i].title);
-            const deadline = new Date(opening[i].deadline).toLocaleDateString('en-En', {
+            const deadline = new Date(Number(opening[i].deadline)).toLocaleDateString('en-En', {
                 year: '2-digit', 
                 month: 'short',
                 day: 'numeric',
@@ -68,4 +68,5 @@ function showJobBoard(e) {
     $('.job-box').removeClass('on');
     $(e.target).parent().parent().addClass('on');
     target[0].scrollIntoView({behavior: 'smooth', block: window.innerWidth < 720? 'start' : 'center', inline: 'center'});
+
 }

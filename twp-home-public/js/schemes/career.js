@@ -13,7 +13,7 @@ const career = {
             fontSize: 40,
             padding: 30,
             fontWeight: 'bold',
-            color: homepage.keyColor,
+            // color: homepage.keyColor,
             zIndex: 2
         },
         children: [

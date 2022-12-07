@@ -29,7 +29,7 @@ BX.regist('IconCard', compData);
  */
 function iconCard(scheme) {
     const b = box().color('#f7f7f7').paddingBottom(50);
-    BX.component(card.cardHead).appendTo(b).text(scheme.headTitle);
+    BX.component(card.cardHead).appendTo(b).text(scheme.headTitle).textColor(homepage.keyColor);
     const wrap = BX.component(card.cardWrap).appendTo(b);
     const navbg = box().appendTo(b).size('100%', 'auto').align('center').marginTop('-50px').addClass('nav-button');
     
@@ -64,8 +64,8 @@ function iconCard(scheme) {
         });
     });
     
-    const rightBtn = BX.component(slideBanner.rightBtn).appendTo(b);
-    const leftBtn = BX.component(slideBanner.leftBtn).appendTo(b);
+    const rightBtn = BX.component(slideBanner.rightBtn).appendTo(b).textColor(homepage.keyColor);
+    const leftBtn = BX.component(slideBanner.leftBtn).appendTo(b).textColor(homepage.keyColor);
     rightBtn.click(scrollRight);
     leftBtn.click(scrollLeft);
 

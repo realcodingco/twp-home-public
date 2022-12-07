@@ -7,7 +7,7 @@ const card = {
     newsBoxHead: {
         kind: 'box',
         style: {
-            color: homepage.keyColor
+            // color: homepage.keyColor
         },
         children: [
             {
@@ -88,7 +88,7 @@ const card = {
             margin: '40px auto',
             textAlign: 'left',
             fontWeight: 'bold',
-            color: homepage.keyColor
+            // color: homepage.keyColor
         }
     },
     cardBox: {

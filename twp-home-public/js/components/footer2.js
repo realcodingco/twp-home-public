@@ -23,6 +23,7 @@ BX.regist('Footer2', compData);
 function footer2(scheme) {
     const b = box().paddingBottom(80);
     const bg = BX.component(footer2.wrap).appendTo(b);
+    bg.find('img')[0].src = homepage.ci;
     const info = BX.component(footer2.information).appendTo(bg).padding(20);
 
     const appendInfos = [
@@ -43,21 +44,23 @@ function footer2(scheme) {
     for(var i=0; i<appendInfos.length; i++) {
         const line = BX.component(footer2.infoText).appendTo(info);
         line.children()[0].innerText = appendInfos[i].icon;
+        line.children()[0].style.color = homepage.keyColor;
         line.children()[1].innerText = homepage[appendInfos[i].key];
     }
 
     const etc = BX.component(footer2.resource).appendTo(bg).padding(20);
     box().appendTo(etc).text('QUICK LINKS').textColor(homepage.keyColor).marginBottom(10).fontWeight('bold');
-    Object.keys(homepage.footers).forEach(function(title) {
-        const el = BX.component(footer2.link).appendTo(etc).text(title);
+    const quicklinks = homepage.footers;
+    for(var j=0; j<quicklinks.length; j++) {
+        const el = BX.component(footer2.link).appendTo(etc).text(quicklinks[j].title);
         let paths = location.pathname.split('/');
         paths.pop();
-        paths.push(homepage.footers[title]);
+        paths.push(quicklinks[j].link);
         const url = paths.join('/');
         el[0].href = url;
-    });
+    }
 
-    BX.component(footer2.copyright).appendTo(b)
+    BX.component(footer2.copyright).appendTo(b).text(homepage.copyright);
 
     return b;
 }

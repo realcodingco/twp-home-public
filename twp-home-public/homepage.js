@@ -1,5 +1,6 @@
 const config = {
     keyColor: '#2C5592', // 주요 컬러
+    adminAccess: 'YWRtaW4=',
     cname : 'TransWave Photonics', // 회사명
     ci : './style/images/ci1.png',//'https://transwavephotonics.files.wordpress.com/2018/11/logo-new-black.png',
     email : 'info@transwavephotonics.com',
@@ -126,23 +127,26 @@ TransWave Photonics recently received a STTR Phase 2 award for development of mo
     intro : { // about 메뉴 페이지 구성 - 회사, 팀 소개
         title : 'About TransWave Photonics', // 페이지 제목
         cPhoto: 'style/roadview.png', // 회사 전경 이미지
-        links : { // 링크 배너 소스
-            'Technology' : {
+        links : [ // 링크 배너 소스
+            {
+                title : 'Technology',
                 image: 'https://cdn.pixabay.com/photo/2021/01/21/10/26/circuit-board-5936930_1280.jpg',
                 href: 'technology.html',
                 text: 'Mid-infrared photonic integrated circuits and systems'
             }, 
-            'Capabilities' : {
+            {
+                title : 'Capabilities',
                 image: 'https://cdn.pixabay.com/photo/2022/04/17/03/09/skills-7137254_1280.jpg',
                 href: 'capabilities.html',
                 text: 'Check out our capabilities'
             }, 
-            'Career' : {
+            {
+                title : 'Career',
                 image: 'https://i.picsum.photos/id/5/430/240.jpg?hmac=BJvPKsEId7pBdAepjGTAnre5hg6BDWlILFDJXkZ3A2A',
                 href: 'careers.html',
                 text: 'Join us our company'
             }
-        },
+        ],
         team : [ // about 페이지 팀소개
             {
                 name: 'Jung, s.',
@@ -204,7 +208,7 @@ TransWave Photonics recently received a STTR Phase 2 award for development of mo
                 title: 'title1 : How the CHIPS Act Will Impact Engineers',
                 desc: 'The $52 billion spending plan outlined in the CHIPS and Science Act that has been signed into law has significant implications for the semiconductor ecosystem—from chip manufacturers to engineers and production teams.\n\n\
                 EE Times asked two design engineers to weigh in on the implications of the Act for engineers in the U.S., in the short and long term. Will it simply help return the design engineering process to status quo pre-2020? Or are there greater changes afoot that will drive a significant shakeup of the semiconductor design and manufacturing process? The answer lies somewhere in between.',
-                time: 1668479675609
+                time: "1668438000000"
             },
             {
                 aid: 'news2',
@@ -212,14 +216,14 @@ TransWave Photonics recently received a STTR Phase 2 award for development of mo
                 title: 'title2 : How the CHIPS Act Will Impact Engineers',
                 desc: 'The $52 billion spending plan outlined in the CHIPS and Science Act that has been signed into law has significant implications for the semiconductor ecosystem—from chip manufacturers to engineers and production teams.\n\n\
                 EE Times asked two design engineers to weigh in on the implications of the Act for engineers in the U.S., in the short and long term. Will it simply help return the design engineering process to status quo pre-2020? Or are there greater changes afoot that will drive a significant shakeup of the semiconductor design and manufacturing process? The answer lies somewhere in between.',
-                time: 1668479675609
+                time: "1668438000000"
             },{
                 aid: 'news3',
                 image: 'https://picsum.photos/seed/725/300/200',
                 title: 'title3 : How the CHIPS Act Will Impact Engineers',
                 desc: 'The $52 billion spending plan outlined in the CHIPS and Science Act that has been signed into law has significant implications for the semiconductor ecosystem—from chip manufacturers to engineers and production teams.\n\n\
                 EE Times asked two design engineers to weigh in on the implications of the Act for engineers in the U.S., in the short and long term. Will it simply help return the design engineering process to status quo pre-2020? Or are there greater changes afoot that will drive a significant shakeup of the semiconductor design and manufacturing process? The answer lies somewhere in between.',
-                time: 1668479675609
+                time: "1668438000000"
             },
             {
                 aid: 'news4',
@@ -227,14 +231,14 @@ TransWave Photonics recently received a STTR Phase 2 award for development of mo
                 title: 'title4 : How the CHIPS Act Will Impact Engineers',
                 desc: 'The $52 billion spending plan outlined in the CHIPS and Science Act that has been signed into law has significant implications for the semiconductor ecosystem—from chip manufacturers to engineers and production teams.\n\n\
                 EE Times asked two design engineers to weigh in on the implications of the Act for engineers in the U.S., in the short and long term. Will it simply help return the design engineering process to status quo pre-2020? Or are there greater changes afoot that will drive a significant shakeup of the semiconductor design and manufacturing process? The answer lies somewhere in between.',
-                time: 1668479675609
+                time: "1668438000000"
             },{
                 aid: 'news5',
                 image: 'https://picsum.photos/seed/725/300/200',
                 title: 'title5 : How the CHIPS Act Will Impact Engineers',
                 desc: 'The $52 billion spending plan outlined in the CHIPS and Science Act that has been signed into law has significant implications for the semiconductor ecosystem—from chip manufacturers to engineers and production teams.\n\n\
                 EE Times asked two design engineers to weigh in on the implications of the Act for engineers in the U.S., in the short and long term. Will it simply help return the design engineering process to status quo pre-2020? Or are there greater changes afoot that will drive a significant shakeup of the semiconductor design and manufacturing process? The answer lies somewhere in between.',
-                time: 1668479675609
+                time: "1668438000000"
             }
         ]
     },
@@ -255,22 +259,55 @@ TransWave Photonics recently received a STTR Phase 2 award for development of mo
         ]
     },
     legal : {
-        patents : [ // patent 관련 문서 링크 목록
-            {
-                url: 'https://patents.google.com/patent/US11211773B2/',
-                title : 'Quantum cascade laser with monolithically integrated passive waveguide'
+        title : 'Legal Information',
+        docs : {
+            'policy' : {
+                title : 'privacy & cookie policy',
+                compName : 'Policy',
+                type : 'link',
+                src : 'https://www.privacypolicies.com/live/d660c899-5381-4786-8eae-bd0b6d54ae66',
+                state: 'open'
             },
-            {
-                url : 'https://patents.google.com/patent/US20220209498A1/',
-                title : 'Quantum cascade laser devices with improved heat extraction'
+            'termsofuse' : {
+                title : 'terms of use',
+                compName : 'Termsofuse',
+                type : 'file',
+                src : 'terms.txt',
+                state: 'open'
+            },
+            'patents' : {
+                title : 'patents',
+                compName : 'Patents',
+                type : 'list',
+                src : [ // patent 관련 문서 링크 목록
+                    {
+                        url: 'https://patents.google.com/patent/US11211773B2/',
+                        title : 'Quantum cascade laser with monolithically integrated passive waveguide'
+                    },
+                    {
+                        url : 'https://patents.google.com/patent/US20220209498A1/',
+                        title : 'Quantum cascade laser devices with improved heat extraction'
+                    }
+                ],
+                state: 'open'
             }
-        ],
-        termsofuse : {
-            file : 'terms.txt' // txt 파일로 정리된 문서
         },
-        policy : {
-            link : 'https://www.privacypolicies.com/live/d660c899-5381-4786-8eae-bd0b6d54ae66' // legal 서비스에서 발행하는 링크주소
-        }
+        // patents : [ // patent 관련 문서 링크 목록
+        //     {
+        //         url: 'https://patents.google.com/patent/US11211773B2/',
+        //         title : 'Quantum cascade laser with monolithically integrated passive waveguide'
+        //     },
+        //     {
+        //         url : 'https://patents.google.com/patent/US20220209498A1/',
+        //         title : 'Quantum cascade laser devices with improved heat extraction'
+        //     }
+        // ],
+        // termsofuse : {
+        //     file : 'terms.txt' // txt 파일로 정리된 문서
+        // },
+        // policy : {
+        //     link : 'https://www.privacypolicies.com/live/d660c899-5381-4786-8eae-bd0b6d54ae66' // legal 서비스에서 발행하는 링크주소
+        // }
     },
     career : { // careers 페이지 
         pageTitle: 'CAREERS',
@@ -281,14 +318,14 @@ TransWave Photonics recently received a STTR Phase 2 award for development of mo
         jobs: [
             {
                 title : 'Senior Product Designer',
-                deadline: 1669964329060,
+                deadline:  "1669906800000",
                 desc: `As a Senior Product Designer, you’ll be driving design excellence, creativity, and critical thinking at TWP. Our audience is comprised of people seeking to make substantial changes in their habits and life. As such, this opportunity will challenge you to think deeply about their needs, mindset, and motivations in order to imagine original solutions that are clear, concise, empathetic, supportive, and non-judgmental. You’ll be at the forefront of defining new ways to track progress, help people stay motivated, and continuously engage people in a lengthy journey of confidence-building and taking on step-wise challenges. You’ll have the unique opportunity to imagine, lead, and help bring to market a broad range of products and deliverables across hardware, multiple mobile and Web applications for a variety of audiences including consumers, behavioral coaches, content creators, and more. \
                 Flexibility to work remotely, in the office, or hybrid. \
                 We are an equal opportunity employer and value diversity at our company. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status.`
             },
             {
                 title : 'job position',
-                deadline: 1668479675609,
+                deadline: "1668438000000",
                 desc: "As a Senior Product Designer, you’ll be driving design excellence, creativity, and critical thinking at TWP. Our audience is comprised of people seeking to make substantial changes in their habits and life. As such, this opportunity will challenge you to think deeply about their needs, mindset, and motivations in order to imagine original solutions that are clear, concise, empathetic, supportive, and non-judgmental. You’ll be at the forefront of defining new ways to track progress, help people stay motivated, and continuously engage people in a lengthy journey of confidence-building and taking on step-wise challenges. You’ll have the unique opportunity to imagine, lead, and help bring to market a broad range of products and deliverables across hardware, multiple mobile and Web applications for a variety of audiences including consumers, behavioral coaches, content creators, and more. \
                 Flexibility to work remotely, in the office, or hybrid. \
                 We are an equal opportunity employer and value diversity at our company. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status. "
@@ -296,12 +333,25 @@ TransWave Photonics recently received a STTR Phase 2 award for development of mo
         ],
         applyMsg: 'if you interest in our team contact us.'
     },
-    footers : { // 푸터 구성 - legal 정보
-        'Privacy & Cookie Policy' : 'legal.html#policy',
-        'Terms of Use' : 'legal.html#termsofuse',
-        'Patents' : 'legal.html#patents',
-        'Journal Articles' : 'news.html'
-    },
+    footers : [
+        {
+            title : 'Privacy & Cookie Policy',
+            link: 'legal.html#policy'
+        },
+        {
+            title : 'Terms of Use',
+            link: 'legal.html#termsofuse'
+        }
+        ,
+        {
+            title : 'Patents',
+            link: 'legal.html#patents'
+        },
+        {
+            title : 'Journal Articles',
+            link: 'news.html'
+        }
+    ],
     connect : { //
         title: 'Ready to get started?', 
         msg : 'Contact our team.', 
@@ -349,13 +399,149 @@ TransWave Photonics recently received a STTR Phase 2 award for development of mo
     }
 };
 
-let homepage, ciHeight;
-readData(function(result) {
-    homepage = JSON.parse(result);
-});
+const adminGuide = {
+    banner : { // 메인 배너 구성
+        resource : [ // 배너 이미지, 텍스트
+            {
+                image: 'link path of ther main banner background image',
+                text: 'banner text'
+            }
+        ]
+    },
+    about : { // 메인 페이지 카드 섹션 구성
+        headTitle: { 
+           keyword: 'title of the section below the main page banner',
+           text: 'head title sub message',
+        },
+        desc: [ 
+            {
+                head: 'button title',
+                image: 'left image link path',
+                text: 'right text'
+            }
+        ]
+    },
+    technology : [  // technology 페이지 내용
+        {
+            head: 'title of the main page about section button',
+            image: 'technology page article image link path',
+            text: 'technology page article text'
+        }
+    ],
+    application : { // 메인 페이지 applications 섹션 구성
+        headTitle: 'title of the main page applications section',
+        tags: [ // 가로 스크롤 항목
+            {
+                icon: 'main page applications section horizontal scroll card item circular image link path',
+                title: 'horizontal scroll card item title',
+                text: 'horizontal scroll card item sub text'
+            }
+        ]
+    },
+    intro : { // about 메뉴 페이지 구성 - 회사, 팀 소개
+        title : 'About menu page title', // 페이지 제목
+        cPhoto: 'company foreground image link path', // 회사 전경 이미지
+        links : [ // 링크 배너 소스
+            {
+                title : 'title of the boxed link banner',
+                image: 'link path of the boxed link banner image',
+                href: 'the page document that links to when the banner is clicked',
+                text: 'sub text of the boxed link banner'
+            }
+        ],
+        team : [ // about 페이지 팀소개
+            {
+                name: 'member name',
+                position: 'member position',
+                image: 'link path of the member picture'
+            }
+        ],
+    },
+    capability: { // capability 페이지
+        items : [
+            {
+                title : 'box title',
+                text : 'box text',
+                image : 'image path to the left of the box' ,
+                desc : 'text in a box that slides down when the box is clicked'
+            }
+        ]
+    },
+    newsContent : { // news 메뉴 페이지 구성 - article list
+        msg: 'sub text of the main page news section',
+        data : [
+            {
+                aid: 'unique article ID used as page hash', 
+                image: 'image link path of the article',
+                title: 'title of the article',
+                desc: 'content of the article<br>Enter line breaks as "&lt;br&gt;"',
+                time: 'article date<br>(format : MM/DD/YYYY)'
+            }
+        ]
+    },
+    legal : {
+        title : 'title of the lagal page',
+        docs : {
+            'policy' : {
+                title : 'title of the item',
+                compName : 'readonly',
+                type : '"link" or "file"',
+                src : 'link path or document',
+                state: '"open" or "close"'
+            },
+            'termsofuse' : {
+                title : 'title of the item',
+                compName : 'readonly',
+                type : '"link" or "file"',
+                src : 'terms.txt',
+                state: '"open" or "close"'
+            },
+            'patents' : {
+                title : 'title of the item',
+                compName : 'readonly',
+                type : 'readonly',
+                src : [ // patent 관련 문서 링크 목록
+                    {
+                        url: 'link of the document',
+                        title : 'title of the document'
+                    }
+                ],
+                state: '"open" or "close"'
+            }
+        }
+    },
+    career : { // careers 페이지 
+        pageTitle: 'title of the careers page',
+        subTitle : 'sub text of the page title',
+        headImage: 'path of the background image at the top of the page',
+        listTitle: 'Title text above the list',
+        subText: 'sub text of the list title',
+        jobs: [
+            {
+                title : 'position title',
+                deadline: 'due date<br>(format : MM/DD/YYYY)', 
+                desc: 'job posting details<br>Enter line breaks as "&lt;br&gt;'
+            }
+        ],
+        applyMsg: 'text at the bottom of the list'
+    },
+    connect : { //
+        title: 'title of the contact banner per page', 
+        msg : 'title text of the second line', 
+        bg : 'path of the pattern image for the banner<br>(background color defaults to key color)', 
+        path: 'readonly', 
+        btnTxt: 'text of the banner button'
+    }
+};
 
-function readData(callback) {
-    const json = localStorage.getItem('homepage') || JSON.stringify(config);
-    callback && callback(json);
-}
+
+
+// readData(function(result) {
+//     homepage = JSON.parse(result);
+// });
+
+// function readData(callback) {
+//     const json = localStorage.getItem('homepage') || JSON.stringify(config);
+//     callback && callback(json);
+// }
 

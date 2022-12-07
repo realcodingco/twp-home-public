@@ -29,7 +29,7 @@ BX.regist('NewsCard', compData);
  */
 function newsCard(scheme) {
     const b = box();
-    const head = BX.component(card.newsBoxHead).appendTo(b);
+    const head = BX.component(card.newsBoxHead).appendTo(b).textColor(homepage.keyColor);
     head.find('h2')[0].innerHTML = 'News';
     head.find('p')[0].innerHTML = scheme.msg;
 
@@ -41,7 +41,7 @@ function newsCard(scheme) {
         newsBox[0].href = 'article.html#' + element.aid;
         newsBox.find('.image')[0].style.backgroundImage = 'url(' + element.image + ')';
         newsBox.find('h4')[0].innerHTML = element.title;
-        newsBox.find('time')[0].innerHTML = new Date(element.time).toLocaleDateString('en-En', {
+        newsBox.find('time')[0].innerHTML = new Date(Number(element.time)).toLocaleDateString('en-En', {
             year: 'numeric', 
             month: 'long',
             day: 'numeric',

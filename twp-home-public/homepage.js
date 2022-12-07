@@ -480,21 +480,21 @@ const adminGuide = {
         ]
     },
     legal : {
-        title : 'title of the lagal page',
+        title : 'title of the legal page',
         docs : {
             'policy' : {
                 title : 'title of the item',
                 compName : 'readonly',
                 type : '"link" or "file"',
                 src : 'link path or document',
-                state: '"open" or "close"'
+                state: 'readonly'
             },
             'termsofuse' : {
                 title : 'title of the item',
                 compName : 'readonly',
                 type : '"link" or "file"',
-                src : 'terms.txt',
-                state: '"open" or "close"'
+                src : 'link path or document',
+                state: 'readonly'
             },
             'patents' : {
                 title : 'title of the item',
@@ -506,7 +506,7 @@ const adminGuide = {
                         title : 'title of the document'
                     }
                 ],
-                state: '"open" or "close"'
+                state: 'readonly'
             }
         }
     },

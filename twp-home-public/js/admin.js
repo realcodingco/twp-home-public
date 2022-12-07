@@ -8,7 +8,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
         page : './js/app.js', //페이지 구성 파일경로
         comp: [ // 컴포넌트별 데이터 수정 할 수 있도록
             {
-                name : 'Header2',
+                name : 'Header',
                 data : 'header' // 데이터 키
             },{
                 name : 'SlideBanner',
@@ -26,7 +26,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
                 name : 'Connect', 
                 data : 'connect'
             },{
-                name : 'Footer2',
+                name : 'Footer',
                 data: ''
             }
         ],
@@ -36,7 +36,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
         page : './js/about.js',
         comp : [
             {
-                name : 'Header2',
+                name : 'Header',
                 data : 'header' // 데이터 키
             },{
                 name: 'Intro',
@@ -45,7 +45,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
                 name : 'Connect', 
                 data : 'connect'
             },{
-                name : 'Footer2',
+                name : 'Footer',
                 data: ''
             }
         ]
@@ -55,7 +55,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
         page : './js/news.js',
         comp : [
             {
-                name : 'Header2',
+                name : 'Header',
                 data : 'header' 
             },{
                 name : 'News',
@@ -64,7 +64,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
                 name : 'Connect', 
                 data : 'connect'
             },{
-                name : 'Footer2',
+                name : 'Footer',
                 data: ''
             }
         ]
@@ -74,7 +74,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
         page : './js/article.js',
         comp : [
             {
-                name : 'Header2',
+                name : 'Header',
                 data : 'header' // 데이터 키
             },{
                 name : 'Article',
@@ -83,7 +83,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
                 name : 'Connect', 
                 data : 'connect'
             },{
-                name : 'Footer2',
+                name : 'Footer',
                 data: ''
             }
         ]
@@ -93,7 +93,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
         page : './js/capabilities.js',
         comp : [
             {
-                name : 'Header2',
+                name : 'Header',
                 data : 'header' 
             },{
                 name : 'Capability',
@@ -102,7 +102,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
                 name : 'Connect', 
                 data : 'connect'
             },{
-                name : 'Footer2',
+                name : 'Footer',
                 data: ''
             }
         ]
@@ -112,7 +112,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
         page : './js/careers.js',
         comp : [
             {
-                name : 'Header2',
+                name : 'Header',
                 data : 'header' 
             },{
                 name : 'Careers',
@@ -121,7 +121,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
                 name : 'Connect', 
                 data : 'connect'
             },{
-                name : 'Footer2',
+                name : 'Footer',
                 data: ''
             }
         ]
@@ -131,13 +131,13 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
         page : './js/contact.js',
         comp : [
             {
-                name : 'Header2',
+                name : 'Header',
                 data : 'header' 
             },{
                 name : 'Contact',
                 data : 'contact', 
             },{
-                name : 'Footer2',
+                name : 'Footer',
                 data: ''
             }
         ]
@@ -147,7 +147,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
         page : './js/legal.js',
         comp : [
             {
-                name : 'Header2',
+                name : 'Header',
                 data : 'header' 
             },{
                 name : 'Legal',
@@ -156,7 +156,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
                 name : 'Connect', 
                 data : 'connect'
             },{
-                name : 'Footer2',
+                name : 'Footer',
                 data : ''
             }
         ]
@@ -166,7 +166,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
         page: './js/technology.js',
         comp : [
             {
-                name : 'Header2',
+                name : 'Header',
                 data : 'header'
             }, {
                 name : 'Technology',
@@ -175,7 +175,7 @@ const pages = { // 페이지 목록 선택상자 데이터, 페이지별 컴포�
                 name : 'Connect',
                 data : 'connect'
             }, {
-                name : 'Footer2',
+                name : 'Footer',
                 data : ''
             }
         ]
@@ -206,25 +206,74 @@ const adminMenus = { // 관리자페이지 메뉴항목 및 가이드
         open : footerItems,
         guide : `You can edit the Quick Link item at the bottom of the homepage.<br>
         Edit quick link titles and delete unnecessary links.<br>
-        <font color=gold>If you modify the page document path, it may not work properly.`
+        <font color=gold>Pages documents cannot be edited.`
     },
-    page : {
-        text: 'page management',
-        icon: 'edit_document',
-        open : pageItems,
-        guide : `You can edit page-related data, and each page is made up of components.<br><br>
-        (1) Select a page to set and save the page tab title and favicon image<br>
-        (2) Component data can be edited by selecting a component per page<br>
-        (3) After selecting a component, you can edit the data by clicking the [Component Edit] button<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at the top of the preview window.<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size=1px color=gold>* Expose buttons only when data can be modified</font><br>
-        (4) When editing is completed in component-edit mode, click the save button at the top right to save.`
+    banner: {
+        text : '[main] banner',
+        icon : 'edit_document',
+        open : 'banner',  //데이터를 불러오는 key, location hash로 사용
+        guide: `Edit the content of the main banner.`
+    },
+    about: {
+        text : '[main] article',
+        icon : 'edit_document',
+        open : 'about',  
+        guide: `Edit the body area just below the main banner.`
+    },
+    application: {
+        text : '[Main] applications',
+        icon : 'edit_document',
+        open : 'application',  
+        guide: `Edit horizontally scrolling card box area.`
+    },
+    intro: {
+        text : '[About] page',
+        icon : 'edit_document',
+        open : 'intro',  
+        guide: `Edit the contents of the about menu page.<br>
+        You can edit the content of the link banner and team data.`
+    },
+    technology: {
+        text : '[Technology] page',
+        icon : 'edit_document',
+        open : 'technology',  
+        guide: `Edit the contents of the technology menu page.`
+    },
+    newsContent: {
+        text : '[News] article',
+        icon : 'edit_document',
+        open : 'newsContent',  
+        guide: `Edit the list of news articles to be featured on the news page.`
+    },
+    capability: {
+        text : '[capabilities] page',
+        icon : 'edit_document',
+        open : 'capability',  
+        guide: `Edit the contents of the capabilities menu page`
+    },
+    career: {
+        text : '[Careers] page',
+        icon : 'edit_document',
+        open : 'career',  
+        guide: `Edit the job information data to be provided in the careers menu.`
+    },
+    legal: {
+        text : '[Legal] page',
+        icon : 'edit_document',
+        open : 'legal',  
+        guide: `Edit legal information page.`
+    },
+    connect: {
+        text : 'contact banner',
+        icon : 'edit_document',
+        open : 'connect',  
+        guide: `Edit the contact banner exposed at the bottom of the page.`
     },
     access : {
         text : 'authorization',
         icon: 'lock',
         open : adminAccess,
-        guide : `You can set a password to access the admin page.`
+        guide : `.`
 
     }
 };
@@ -276,8 +325,9 @@ function initApp() {
  * 관리자 페이지 메뉴 선택에 따른 페이지 리셋
  */
 function enterAdmin() {
-    BX.component(admin.header).appendTo(topBox);
-    const bg = box().appendTo(topBox).size('100%', 'calc(100vh - 56px)').display('flex');
+    const b = box().appendTo(topBox).maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)').overflow('hidden');
+    BX.component(admin.header).appendTo(b);
+    const bg = box().appendTo(b).size('100%', 'calc(100vh - 56px)').display('flex');
     const menu = BX.component(admin.menu).appendTo(bg);
     
     BX.component(admin.mobileMenuCover).appendTo(bg);
@@ -306,7 +356,11 @@ function enterAdmin() {
     // 메뉴별 바디 붙이기
     if(location.hash == '') {
         basicItems().appendTo(body);
-    } else {
+    } else if(typeof adminMenus[hashTxt].open == 'string') {
+        const b = box().height('calc(100% - 54px)').align('center').appendTo(body);
+        b[0].className = 'pageBg';
+        openCompEdit(null, adminMenus[hashTxt].open);
+    } else {    
         const appendComponent = adminMenus[hashTxt].open;
         appendComponent().appendTo(body);
     }
@@ -427,7 +481,7 @@ function menuItems() {
     }
 
     const buttonContainer = BX.component(admin.buttonContainer).appendTo(b);
-    BX.component(admin.addBtn).appendTo(buttonContainer);
+    // BX.component(admin.addBtn).appendTo(buttonContainer);
     BX.component(admin.saveBtn).appendTo(buttonContainer);
 
     return b; 
@@ -453,7 +507,7 @@ function footerItems() {
     }
 
     const buttonContainer = BX.component(admin.buttonContainer).appendTo(b);
-    BX.component(admin.addBtn).appendTo(buttonContainer);
+    // BX.component(admin.addBtn).appendTo(buttonContainer);
     BX.component(admin.saveBtn).appendTo(buttonContainer);        
 
     return b; 
@@ -548,7 +602,7 @@ function compSelect(e) {
     });
     
     // 편집 제외 대상 컴포넌트
-    const exceptComp = ['Header2', 'Contact', 'Footer2'];
+    const exceptComp = ['Header', 'Contact', 'Footer'];
     if(componentData != undefined && !exceptComp.includes(componentName)) {
         // 컴포넌트 편집 버튼 노출
         $('.comp-edit-button')[0].style.display = 'block';
@@ -558,16 +612,24 @@ function compSelect(e) {
 /**
  * component edit 버튼 클릭 이벤트
  */
-function openCompEdit() {
+function openCompEdit(e, key) {
     // 컴포넌트 데이터를 수정할 수 있도록 팝업창 만들기 - 저장버튼
-    let key = $('#compSelect')[0].value;
+    const side = BX.component(admin.sideBar).appendTo($('.pageBg')[0]).top(40).zIndex(10).color('rgba(0,0,0,0.8)').height('calc(100% - 40px)');   //vh - 100px)');
+    let type = 'component'; // 수정모드
+    
+    if(!key) {
+        key = $('#compSelect')[0].value;
+    } else {
+        side.children()[0].style.display = 'none';
+        type = 'data';
+    }
+    
     let componentData = homepage[key];
-
-    const side = BX.component(admin.sideBar).appendTo($('.pageBg')[0]).top(40).zIndex(10).color('rgba(0,0,0,0.8)').height('calc(100vh - 100px)');
     
     // 사용자 ui 버전
     if(Array.isArray(componentData)) { // 배열이면
         appendArr('', componentData, side.children()[1]);
+        
     } 
     else {
         appendObj('', componentData, side.children()[1]);
@@ -581,7 +643,12 @@ function openCompEdit() {
     }
 
     //저장버튼 붙이기
-    BX.component(admin.CompSaveBtn).appendTo(side.children()[1]).color(totalData.keyColor);
+    const saveBtn = BX.component(admin.CompSaveBtn).appendTo(side.children()[1]).color(totalData.keyColor);
+    if(type == 'data') {
+        saveBtn[0].onclick = saveData;
+    } else {
+        saveBtn[0].onclick = saveComponentData;
+    }
 
     function appendArr(upper, arr, target) { // [{},{}..]
         for(var i=0; i<arr.length; i++) {
@@ -603,10 +670,10 @@ function openCompEdit() {
                 const splitKeys = upper.split('.');
                 let guideData;
                 if(!upper) {
-                    guideData = adminGuide[$('#compSelect')[0].value][0][k];
+                    guideData = adminGuide[key][0][k];
                 }
                 else if(splitKeys.length > 1) {
-                    let data = adminGuide[$('#compSelect')[0].value];
+                    let data = adminGuide[key];
                     let searched = data;
                     for(var o=0; o<splitKeys.length; o++) {
                         searched = searched[splitKeys[o]];
@@ -614,7 +681,7 @@ function openCompEdit() {
                     guideData = searched[0][k];
                 } 
                 else {
-                    guideData = adminGuide[$('#compSelect')[0].value][upper][0][k];
+                    guideData = adminGuide[key][upper][0][k];
                 }
 
                 if(guideData == 'readonly') {
@@ -644,30 +711,30 @@ function openCompEdit() {
         const one = box().appendTo(target).size('95%', 'auto').border('1px solid gray').padding(10).margin(5).borderRadius(5);
         one[0].name = 'object';
 
-        Object.keys(obj).forEach(function(key, i) {
+        Object.keys(obj).forEach(function(o, i) {
             const d = BX.component(admin.dataForm).appendTo(one);
-            d.children()[0].innerText = key;
-            if(typeof obj[key] == 'string'){
+            d.children()[0].innerText = o;
+            if(typeof obj[o] == 'string'){
                 d.children()[1].style.color = totalData.keyColor;
-                d.children()[1].value = obj[key];
-                d.children()[1].name = upper != '' ? upper + '.' + key : key;
+                d.children()[1].value = obj[o];
+                d.children()[1].name = upper != '' ? upper + '.' + o : o;
 
                 //가이드 붙이기
                 const splitKeys = upper.split('.');
                 let guideData;
                 if(!upper) {
-                    guideData = adminGuide[$('#compSelect')[0].value][key];
+                    guideData = adminGuide[key][o];
                 }
                 else if(splitKeys.length > 1) {
-                    let data = adminGuide[$('#compSelect')[0].value];
+                    let data = adminGuide[key];
                     let searched = data;
-                    for(var o=0; o<splitKeys.length; o++) {
-                        searched = searched[splitKeys[o]];
+                    for(var i=0; i<splitKeys.length; i++) {
+                        searched = searched[splitKeys[i]];
                     }
-                    guideData = searched[key];
+                    guideData = searched[o];
                 } 
                 else {
-                    guideData = adminGuide[$('#compSelect')[0].value][upper][key];
+                    guideData = adminGuide[key][upper][o];
                 }
 
                 if(guideData == 'readonly') {
@@ -679,15 +746,15 @@ function openCompEdit() {
 
                 fixedHeight(d.children()[1]);
             }
-            else if(Array.isArray(obj[key])) {
+            else if(Array.isArray(obj[o])) {
                 d.children()[0].style.width = '100%';
                 d.children()[1].remove();
-                appendArr(upper != '' ? upper + '.' + key : key, obj[key], d);
+                appendArr(upper != '' ? upper + '.' + o : o, obj[o], d);
             } 
             else {
                 d.children()[0].style.width = '100%';
                 d.children()[1].remove();
-                appendObj(upper != '' ? upper + '.' + key : key, obj[key], d);
+                appendObj(upper != '' ? upper + '.' + o : o, obj[o], d);
             }
         });
     }
@@ -790,7 +857,7 @@ function showIframe(){
 }
 
 /**
- * 컴포넌트 데이터 저장 버튼 클릭 이벤트
+ * 컴포넌트 데이터 저장 버튼 클릭 이벤트 : 콤보박스 UI를 통한 데이터 편집모드
  * @param {*} e 
  */
 function saveComponentData(e) {
@@ -827,6 +894,47 @@ function saveComponentData(e) {
             $('.sidebar').remove();
             compSelect($('#compSelect')[0])
         });
+    } 
+}
+
+/**
+ * 메뉴를 통한 데이터 편집 저장 버튼 클릭 이벤트
+ * @param {*} e 
+ */
+function saveData(e) {
+    e.preventDefault();
+    let key = location.hash.slice(1);
+    let blankCount = 0;
+    $('.sidebar textarea').each(function(index,item){
+        // 저장할 데이터
+        let editData = item.value;
+        if(!editData) blankCount++;
+        if(item.name.includes('time') || item.name.includes('deadline')) {
+            editData = convertDateString(editData, true);
+        }
+        if(typeof editData == 'string')
+        editData = editData.replace(/\n/g, "");
+        eval('totalData.' + key + '.' + item.name + '=' + '"' + editData + '"');
+    });    
+    // 미입력 항목 체크
+    if(blankCount > 0) { 
+        alert('Please fill in blank fields and try again.');
+        return;
+    }
+    // 변경 데이터 체크
+    if(JSON.stringify(totalData[key]) == JSON.stringify(homepage[key])) { 
+        alert('Nothing has changed.');
+        return;
+    }
+
+    if(confirm('Do you want to save?') == true) {
+        writeData(totalData, function(result) {
+            alert('Saved.');
+            //편집창을 닫고, 데이터가 변경된 컴포넌트 미리보기 창 새로고침
+            homepage = JSON.parse(JSON.stringify(totalData));
+        });
+    } else {
+        totalData[key] = homepage[key];
     }
 }
 
@@ -933,6 +1041,8 @@ function appendFooterLine(target, title, doc) {
     const line = BX.component(admin.menuInputItem).appendTo(target);
     line.children()[1].value = title;
     line.children()[2].value = doc;
+    line.children()[2].readOnly = true;
+    line.children()[2].style.background = 'lightgray';
     line.children()[0].innerText = '';
 
     BX.component(admin.deleteBtn).appendTo(line);
@@ -948,6 +1058,8 @@ function appendMenuLine(target, data) {
     if(Object.keys(data).length != 0) {
         line.children()[1].value = data.title;
         line.children()[2].value = data.link;
+        line.children()[2].readOnly = true;
+        line.children()[2].style.background = 'lightgray';
     }
 
     const toggleBtn = BX.component(admin.toggleBtn).appendTo(line);

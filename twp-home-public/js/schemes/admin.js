@@ -227,7 +227,6 @@ const admin = {
         kind : 'input',
         type:'submit',
         text : 'SAVE',
-        onClick: 'saveComponentData',
         style: {
             position: 'absolute',
             right: 35,

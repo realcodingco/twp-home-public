@@ -25,7 +25,7 @@ span.tip {
     font-family: sans-serif;
     color: white;
     background: var(--main);
-    z-index: 10;
+    z-index: 20;
 }
 select {
     border: none;

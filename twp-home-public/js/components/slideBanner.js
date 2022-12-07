@@ -20,6 +20,8 @@ bx.appendTo(topBox);`
 };
 BX.regist('SlideBanner', compData);
 let slider = undefined;
+let bannerIndex = 1;
+let bannerCount;
 
 /**
  * 이미지 슬라이드 배너 생성 함수
@@ -32,6 +34,7 @@ function slideBanner(scheme) {
     const btn = BX.component(slideBanner.slideBtn).appendTo(b);
     BX(btn.children()[0]).click(moveNext);
     BX(btn.children()[1]).click(movePrev);
+    bannerCount = scheme.resource.length;
 
     if(scheme) {
         for(var i=0; i<scheme.resource.length; i++){
@@ -66,6 +69,10 @@ function slideBanner(scheme) {
  */
 function moveNext() {
     slider.next();
+    let idx = bannerIndex;
+    if(idx > bannerCount) idx = 1;
+    $('.move-button :not(:nth-child(' + idx + '))').removeClass('active');
+    $('.move-button :nth-child(' + idx + ')').addClass('active');
 }
 
 /**
@@ -73,6 +80,10 @@ function moveNext() {
  */
 function movePrev() {
     slider.prev();
+    let idx = bannerIndex;
+    if(idx == 0) idx = bannerCount;
+    $('.move-button :not(:nth-child(' + idx + '))').removeClass('active');
+    $('.move-button :nth-child(' + idx + ')').addClass('active');
 }
 
 /**
@@ -83,7 +94,6 @@ function movePrev() {
  */
 function Slider(target, type){  //
     // 상태
-    let index = 1;
     let isMoved = true;
     const speed = 2000; // ms
 
@@ -105,11 +115,12 @@ function Slider(target, type){  //
     container.style["flex-direction"] = type === "V" ? "column" : "row";
     container.style["width"] = '100%'; //sliderRects.width + "px";
     container.style["height"] = '100%'; //sliderRects.height + "px";
-    container.style["transform"] = translate(index);
+    container.style["transform"] = translate(bannerIndex);
     
     // 슬라이더 화면 목록
     let boxes = [].slice.call(slider.children); 
     boxes = [].concat(boxes[boxes.length - 1], boxes, boxes[0]);
+    console.log(boxes)
     
     // 슬라이더 화면 스타일
     const size = boxes.length;
@@ -133,16 +144,16 @@ function Slider(target, type){  //
     });
     container.addEventListener("transitionend", function () {
         // 처음으로 순간이동
-        if (index === size - 1) {
-            index = 1;
+        if (bannerIndex === size - 1) {
+            bannerIndex = 1;
             container.style["transition"] = "none";
-            container.style["transform"] = translate(index);
+            container.style["transform"] = translate(bannerIndex);
         }
         // 끝으로 순간이동
-        if (index === 0) {
-            index = size - 2;
+        if (bannerIndex === 0) {
+            bannerIndex = size - 2;
             container.style["transition"] = "none";
-            container.style["transform"] = translate(index);
+            container.style["transform"] = translate(bannerIndex);
         }
     });
 
@@ -153,26 +164,25 @@ function Slider(target, type){  //
     return {
         move: function (i) {
             if (isMoved === true) {
-                index = i;
+                bannerIndex = i;
                 container.style["transition"] = 'initial' //transform;
-                container.style["transform"] = translate(index);
+                container.style["transform"] = translate(bannerIndex);
             }
         },
         next: function () {
             if (isMoved === true) {
-                index = (index + 1) % size;
+                bannerIndex = (bannerIndex + 1) % size;
                 container.style["transition"] = transform;
-                container.style["transform"] = translate(index);
+                container.style["transform"] = translate(bannerIndex);
             }
         },
         prev: function () {
             if (isMoved === true) {
-                index = index === 0 ? index + size : index;
-                index = (index - 1) % size;
+                bannerIndex = bannerIndex === 0 ? bannerIndex + size : bannerIndex;
+                bannerIndex = (bannerIndex - 1) % size;
                 container.style["transition"] = transform;
-                container.style["transform"] = translate(index);
+                container.style["transform"] = translate(bannerIndex);
             }
         }
     };
 }
-

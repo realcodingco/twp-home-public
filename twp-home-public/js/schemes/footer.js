@@ -1,5 +1,5 @@
 // 페이지 푸터 요소
-const footer2 = {
+const footer = {
     wrap:  {
         kind: 'box',
         className: 'footer-wrap',

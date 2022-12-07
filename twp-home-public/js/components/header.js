@@ -1,11 +1,11 @@
 const compData = {
-    bx : header2,
+    bx : header,
     category: 'header',
     user: 'zzin',
     desc: `헤더 컴포넌트<br>
 ▼ scheme 데이터 key :<br>
 menuData`,
-    basicCode: `BX.components.Header2.bx().appendTo(topBox);`,
+    basicCode: `BX.components.header.bx().appendTo(topBox);`,
     extendCode: `<font color=gray>// scheme 데이터 사용</font>
 const scheme = {
     home: '홈 링크',
@@ -15,30 +15,30 @@ const scheme = {
         }
     ]
 };
-const bx = BX.components.Header2.bx(scheme);
+const bx = BX.components.header.bx(scheme);
 bx.appendTo(topBox);`
 };
-BX.regist('Header2', compData);
+BX.regist('Header', compData);
 
 /**
  * 헤더 컴포넌트 
  * @param {object} scheme 
  * @returns 헤더 box
  */
-function header2(scheme) {
-    const b = BX.component(header2.header);
-    const ci = BX.component(header2.ciBox).appendTo(b);
+function header(scheme) {
+    const b = BX.component(header.header);
+    const ci = BX.component(header.ciBox).appendTo(b);
     $(ci[0]).find('img')[0].src = homepage.ci;
 
     ci[0].href = scheme.home;
-    const menuBox = BX.component(header2.menuBox).appendTo(b);
-    // BX.component(header2.menuIcon).appendTo(b);
-    BX.component(header2.hambugerIcon).appendTo(b);
+    const menuBox = BX.component(header.menuBox).appendTo(b);
+    // BX.component(header.menuIcon).appendTo(b);
+    BX.component(header.hambugerIcon).appendTo(b);
 
     scheme.menuData.forEach(function(o) {
         if(o.state == 'close') return;
         
-        const menu = BX.component(header2.menu);
+        const menu = BX.component(header.menu);
         menu[0].innerHTML = '<a href="'+ o.link +'">'+ o.title + '</a>';
         menuBox[0].appendChild(menu[0]);
     });

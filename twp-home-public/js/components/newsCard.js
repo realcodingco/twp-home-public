@@ -28,7 +28,7 @@ BX.regist('NewsCard', compData);
  * @returns 
  */
 function newsCard(scheme) {
-    const b = box();
+    const b = box().maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
     const head = BX.component(card.newsBoxHead).appendTo(b).textColor(homepage.keyColor);
     head.find('h2')[0].innerHTML = 'News';
     head.find('p')[0].innerHTML = scheme.msg;

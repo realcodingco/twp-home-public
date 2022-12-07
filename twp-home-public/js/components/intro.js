@@ -29,7 +29,7 @@ BX.regist('Intro', compData);
  * @returns company overview, teams box
  */
 function intro(scheme) {
-    const b = box();
+    const b = box().maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
     BX.component(intro.head).appendTo(b).text(scheme.title);
     const image = BX.component(intro.image).appendTo(b);
     image[0].src = scheme.cPhoto; 

@@ -26,7 +26,7 @@ BX.regist('Article', compData);
  * @returns 뉴스 기사 box
  */
 function article(scheme) {
-    const b = box().align('center').paddingBottom(100).color('rgb(181, 207, 246, 0.2)');
+    const b = box().align('center').paddingBottom(100).color('rgb(181, 207, 246, 0.2)').maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
     const articleData = homepage.newsContent.data.filter(i => i.aid == scheme.aid)[0];
     const title = BX.component(article.head).text(articleData.title).appendTo(b);
     

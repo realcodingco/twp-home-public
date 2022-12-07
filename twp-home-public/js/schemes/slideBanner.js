@@ -74,7 +74,7 @@ const slideBanner = {
             height: 400,
             background: '#f7f7f7',
             overflow: 'hidden',
-            padding: 20,
+            // padding: 20,
         },
         children: [] //배너 수에 따라.. 
     }

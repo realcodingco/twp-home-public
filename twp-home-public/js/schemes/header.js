@@ -1,5 +1,5 @@
 // 페이지 헤더 요소
-const header2 = {
+const header = {
     header: {
         kind: 'box',
         className: 'header fixed',

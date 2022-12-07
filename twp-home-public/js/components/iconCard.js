@@ -28,7 +28,7 @@ BX.regist('IconCard', compData);
  * @returns 카드 섹션 box
  */
 function iconCard(scheme) {
-    const b = box().color('#f7f7f7').paddingBottom(50);
+    const b = box().color('#f7f7f7').paddingBottom(50).maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
     BX.component(card.cardHead).appendTo(b).text(scheme.headTitle).textColor(homepage.keyColor);
     const wrap = BX.component(card.cardWrap).appendTo(b);
     const navbg = box().appendTo(b).size('100%', 'auto').align('center').marginTop('-50px').addClass('nav-button');

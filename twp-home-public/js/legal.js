@@ -11,9 +11,9 @@ readConfig((error, data) => {
         document.querySelector("link[rel='shortcut icon']").href = homepage.pages.legal.favicon || homepage.favicon;
         document.documentElement.style.setProperty("--main", homepage.keyColor);
 
-        BX.components.Header2.bx(homepage.header).appendTo(topBox);
+        BX.components.Header.bx(homepage.header).appendTo(topBox);
         BX.components.Legal.bx(homepage.legal).appendTo(topBox);
         BX.components.Connect.bx(homepage.connect).appendTo(topBox);
-        BX.components.Footer2.bx().appendTo(topBox);
+        BX.components.Footer.bx().appendTo(topBox);
     }
 });

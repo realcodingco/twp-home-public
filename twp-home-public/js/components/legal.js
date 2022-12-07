@@ -24,7 +24,7 @@ BX.regist('Termsofuse', {bx: termsofuse});
 function legal(scheme) {
     const isAdmin = document.location.hash == '' || document.location.hash == '#page';
     const target = isAdmin ? 'patents' : document.location.hash.slice(1); // admin 페이지면 patents 페이지로 열어주기
-    const b = box();
+    const b = box().maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
     BX.component(intro.head).appendTo(b).text(scheme.title);
 
     const wrap = box().appendTo(b).size('100%').css('display', 'table').borderTop('1px solid #eeeeee');

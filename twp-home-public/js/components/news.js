@@ -28,8 +28,8 @@ BX.regist('News', compData);
 function news(scheme) { //
     const b = box();
     BX.component(schemes.pageHead).appendTo(b).text('News').textColor(homepage.keyColor);
-
-    const wrap = BX.component(news.wrap).appendTo(b);
+    const aligndiv = box().appendTo(b).maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
+    const wrap = BX.component(news.wrap).appendTo(aligndiv);
     scheme.data.forEach(element => {
         const newsBox = BX.component(card.newsBox).appendTo(wrap);
         newsBox[0].href = 'article.html#' + element.aid;

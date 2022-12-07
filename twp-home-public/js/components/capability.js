@@ -21,7 +21,7 @@ BX.regist('Capability', compData);
  * @returns company overview, teams box
  */
 function capability(scheme) {
-    const b = box().paddingBottom(100);
+    const b = box().paddingBottom(100).maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
     BX.component(intro.head).appendTo(b).text('Capabilities');
     
     const items = scheme.items;

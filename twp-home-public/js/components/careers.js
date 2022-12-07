@@ -26,7 +26,7 @@ BX.regist('Careers', compData);
  * @returns 현재 채용 정보 box
  */
 function careers(scheme) {
-    const b = box();
+    const b = box().maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
     const title = BX.component(career.topTitle).appendTo(b); //배너
     title[0].style.background = 'url("' + scheme.headImage + '")';
     const pageHead = BX.component(career.head).appendTo(b).align('center').text(scheme.pageTitle).textColor(homepage.keyColor);

@@ -22,7 +22,7 @@ BX.regist('Contact', compData);
  * @returns contact form box
  */
 function contact(scheme) {
-    const b = BX.component(contact.wrap).align('center');
+    const b = BX.component(contact.wrap).align('center').maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
     BX.component(contact.head).text('Contact us').appendTo(b).textColor(homepage.keyColor);
 
     // 지도 삽입

@@ -30,7 +30,9 @@ function news(scheme) { //
     BX.component(schemes.pageHead).appendTo(b).text('News').textColor(homepage.keyColor);
     const aligndiv = box().appendTo(b).maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
     const wrap = BX.component(news.wrap).appendTo(aligndiv);
-    scheme.data.forEach(element => {
+
+    let sortedCurrent = scheme.data.sort((x, y) => Number(y.time) - Number(x.time)); // 최신순으로 정렬하기
+    sortedCurrent.forEach(element => {
         const newsBox = BX.component(card.newsBox).appendTo(wrap);
         newsBox[0].href = 'article.html#' + element.aid;
         newsBox.find('.image')[0].style.backgroundImage = 'url(' + element.image + ')';

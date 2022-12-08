@@ -33,7 +33,7 @@ function newsCard(scheme) {
     head.find('h2')[0].innerHTML = 'News';
     head.find('p')[0].innerHTML = scheme.msg;
 
-    let sortedCurrent = scheme.data.sort((x, y) => y.time - x.time); // 최신순으로 정렬하기
+    let sortedCurrent = scheme.data.sort((x, y) => Number(y.time) - Number(x.time)); // 최신순으로 정렬하기
     const wrap = BX.component(card.newsBoxWrap).appendTo(b);
     for(var i=0; i<3; i++) { // 3개만 보여주기
         const element = sortedCurrent[i];

@@ -38,7 +38,7 @@ function iconCard(scheme) {
         cardBox.find('img')[0].src = o.icon;
         cardBox.find('h4')[0].innerHTML = o.title;
         cardBox.find('p')[0].innerHTML = o.text;
-
+        if(i == 0) cardBox.addClass('on');
         // 내비게이션 점 붙이기
         const dot = BX.component(slideBanner.moveBtn).appendTo(navbg); // 하단 이동점 붙이기
         if(i == 0) dot.addClass('active');
@@ -63,7 +63,7 @@ function iconCard(scheme) {
             }
         });
     });
-    
+   
     const rightBtn = BX.component(slideBanner.rightBtn).appendTo(b).textColor(homepage.keyColor);
     const leftBtn = BX.component(slideBanner.leftBtn).appendTo(b).textColor(homepage.keyColor);
     rightBtn.click(scrollRight);
@@ -75,31 +75,36 @@ function iconCard(scheme) {
 /**
  * 오른쪽 화살표 내비게이션 버튼 클릭 이벤트 함수
  */
- function scrollRight(e) {
-    const cardBox = $('.cardWrap')[0];
-    cardBox.scrollTo(cardBox.scrollLeft + Math.round(cardBox.scrollWidth / $('.cardWrap').children().length), 500);
+let scrollArrowBtnCount = 1;
+function scrollRight(e) {
+    scrollArrowBtnCount++;
+    $('.nav-button :nth-child('+scrollArrowBtnCount+')').click();
+    // const cardBox = $('.cardWrap')[0];
+    // cardBox.scrollTo(cardBox.scrollLeft + Math.round(cardBox.scrollWidth / $('.cardWrap').children().length), 500);
 
-    setTimeout(() => {
-        if(cardBox.scrollLeft + 1 >= cardBox.scrollWidth - $('.cardWrap')[0].offsetWidth)
-            $(this)[0].style.visibility = 'hidden';
+    // setTimeout(() => {
+    //     if(cardBox.scrollLeft + 1 >= cardBox.scrollWidth - $('.cardWrap')[0].offsetWidth)
+    //         $(this)[0].style.visibility = 'hidden';
 
-        if(cardBox.scrollLeft > 0 )
-            $(this).next()[0].style.visibility = 'visible';
-    }, 510);
+    //     if(cardBox.scrollLeft > 0 )
+    //         $(this).next()[0].style.visibility = 'visible';
+    // }, 510);
 }
 
 /**
  * 왼쪽 화살표 내비게이션 버튼 클릭 이벤트 함수
  */
 function scrollLeft(e) {
-    const cardBox = $('.cardWrap')[0];
-    cardBox.scrollTo(cardBox.scrollLeft - Math.round(cardBox.scrollWidth / $('.cardWrap').children().length), 500);
+    scrollArrowBtnCount--;
+    $('.nav-button :nth-child('+scrollArrowBtnCount+')').click();
+    // const cardBox = $('.cardWrap')[0];
+    // cardBox.scrollTo(cardBox.scrollLeft - Math.round(cardBox.scrollWidth / $('.cardWrap').children().length), 500);
     
-    setTimeout(() => {
-        if(cardBox.scrollLeft == 0) 
-            $(this)[0].style.visibility = 'hidden';
+    // setTimeout(() => {
+    //     if(cardBox.scrollLeft == 0) 
+    //         $(this)[0].style.visibility = 'hidden';
     
-        if(cardBox.scrollLeft <= (cardBox.scrollWidth / 2))
-            $(this).prev()[0].style.visibility = 'visible';
-    }, 510);   
+    //     if(cardBox.scrollLeft <= (cardBox.scrollWidth / 2))
+    //         $(this).prev()[0].style.visibility = 'visible';
+    // }, 510);   
 }

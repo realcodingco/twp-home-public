@@ -113,6 +113,10 @@ ul.menuBox {
     padding: 20px;
     font-family: Montserrat;
     font-weight: 300;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
 }
 ul.menuBox.clicked {
     width:100%;
@@ -125,6 +129,8 @@ ul.menuBox.clicked {
 @media ( max-width: 1040px ) {  /* mobile */
     ul.menuBox {
         display: none;
+        position: relative;
+        transform: none;
     }
     .menuIcon {
         display: block;
@@ -138,10 +144,5 @@ ul.menuBox.clicked {
 }
 
 @media ( min-width: 1040px ) {  /* pc */
-    ul.menuBox {
-        display: flex;
-    }
-    .menuIcon{
-        display: none;
-    }
+
 }

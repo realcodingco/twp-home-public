@@ -30,14 +30,14 @@ let data, timer = undefined;
  */
 function about(scheme) {
     data = scheme;
-    const b = box().maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
+    const b = box();
 
     const head = BX.component(about.headTitle).appendTo(b).text(scheme.headTitle.keyword);
     head.children()[0].innerHTML = scheme.headTitle.text;
 
     const contBox = BX.component(about.contentBox).appendTo(b);
     scheme.desc.forEach((element, i) => {
-        const btn = BX.component(about.contentTitle); //
+        const btn = BX.component(about.contentTitle);
         btn[0].innerHTML = element.head;
         contBox.children()[0].appendChild(btn[0]); 
         if(i == 0) {

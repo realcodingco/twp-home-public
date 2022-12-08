@@ -120,7 +120,6 @@ function Slider(target, type){  //
     // 슬라이더 화면 목록
     let boxes = [].slice.call(slider.children); 
     boxes = [].concat(boxes[boxes.length - 1], boxes, boxes[0]);
-    console.log(boxes)
     
     // 슬라이더 화면 스타일
     const size = boxes.length;

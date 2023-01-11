@@ -182,7 +182,7 @@ a .content{
         place-items: center;
         height: auto;
         width: 100%;
-        padding: 5px;
+        justify-content: center;
     }
     .cardWrap ~ button {
         display: none;

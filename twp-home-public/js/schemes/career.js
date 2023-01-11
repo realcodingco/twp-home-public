@@ -6,8 +6,8 @@ const career = {
     head : {
         kind: 'box',
         style: {
-            height: 200,
-            marginTop: '-200px',
+            // height: 200,
+            // marginTop: '-200px',
             bottom : 0,
             backgroundColor: 'rgba(255,255,255,0.7)',
             fontSize: 40,
@@ -33,7 +33,7 @@ const career = {
             textAlign: 'center',
             fontSize: 28,
             fontWeight: 'bold',
-            marginTop: 50,
+            marginTop: 20,
             color: '#444'
         },
         children: [
@@ -52,7 +52,7 @@ const career = {
             width: '100%',
             minHeight: '500px',
             textAlign: 'center',
-            paddingBottom: 100,
+            paddingBottom: 150,
             marginTop: 20
         },
         children: [

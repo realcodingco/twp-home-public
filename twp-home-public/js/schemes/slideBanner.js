@@ -29,7 +29,7 @@ const slideBanner = {
         html: '<i class="fa-solid fa-chevron-right"></i>',
         style: {
             color: '#2C5592',
-            width: 30,
+            // width: 30,
             height: 60,
             border: 0,
             background: 'transparent',
@@ -46,7 +46,7 @@ const slideBanner = {
         html: '<i class="fa-solid fa-chevron-left"></i>',
         style: {
             color: '#2C5592',
-            width: 30,
+            // width: 30,
             height: 60,
             border: 0,
             background: 'transparent',

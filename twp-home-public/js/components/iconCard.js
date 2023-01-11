@@ -81,7 +81,6 @@ function iconCard(scheme) {
  */
 let scrollArrowBtnCount = 1;
 function scrollRight(e) {
-    console.log(scrollArrowBtnCount);
     scrollArrowBtnCount++;
     $('.nav-button :nth-child('+scrollArrowBtnCount+')').click();
 }

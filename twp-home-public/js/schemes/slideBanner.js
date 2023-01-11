@@ -56,7 +56,7 @@ const slideBanner = {
             left: 40,
             top: '50%',
             transform: 'translate(0, -50%)',
-            visibility: 'hidden'
+            // visibility: 'hidden'
         }
     },
     slideBtn: {

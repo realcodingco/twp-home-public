@@ -53,17 +53,6 @@ function iconCard(scheme) {
             $('.cardWrap :not(:nth-child('+idx+'))').removeClass('on');
             $(target).addClass('on');
 
-            // 처음과 마지막 dot이면 화살표 숨기기
-            if(idx == 4) {
-                rightBtn[0].style.visibility = 'hidden';
-                leftBtn[0].style.visibility = 'visible';
-            } else if(idx == 1) {
-                rightBtn[0].style.visibility = 'visible';
-                leftBtn[0].style.visibility = 'hidden';
-            } else {
-                rightBtn[0].style.visibility = 'visible';
-                leftBtn[0].style.visibility = 'visible';
-            }
             scrollArrowBtnCount = idx;
         });
     });
@@ -82,6 +71,7 @@ function iconCard(scheme) {
 let scrollArrowBtnCount = 1;
 function scrollRight(e) {
     scrollArrowBtnCount++;
+    if(scrollArrowBtnCount > 4) scrollArrowBtnCount = 1;
     $('.nav-button :nth-child('+scrollArrowBtnCount+')').click();
 }
 
@@ -90,5 +80,6 @@ function scrollRight(e) {
  */
 function scrollLeft(e) {
     scrollArrowBtnCount--;
+    if(scrollArrowBtnCount == 0) scrollArrowBtnCount = 4;
     $('.nav-button :nth-child('+scrollArrowBtnCount+')').click();
 }

@@ -26,12 +26,9 @@ function legal(scheme) {//
     const target = document.location.hash.slice(1);
     BX.component(intro.head).appendTo(b).text(scheme.docs[target].title);
 
-    if(target == 'policy') {
+    if(target == 'policy' || target == 'termsofuse') {
         BX.components.Policy.bx(scheme.docs[target]).appendTo(b);
     }
-    else if(target == 'termsofuse')  {
-        BX.components.Termsofuse.bx(scheme.docs[target]).appendTo(b);
-    } 
     else if(target == 'patents') {
         BX.components.Patents.bx(scheme.docs[target]).appendTo(b);
     }
@@ -45,14 +42,14 @@ function legal(scheme) {//
  */
 function policy(scheme) {
     const b = box();
-    if(scheme.type == 'link') {
-        const frame = BX.component(legal.frame).appendTo(b);
-        frame.find('iframe')[0].src = scheme.src;
-    } 
-    else if(scheme.type == 'file') {
+    if(scheme.type == 'link') { // html 문서
         b.height('auto');
-        // const capitalizeTitle = scheme.title.replace(/\b[a-z]/, letter => letter.toUpperCase());
-        // box().appendTo(b).text(capitalizeTitle).fontSize(35).padding(30);
+        const txt = loadFile(scheme.src); //./policy.txt
+        const txtBg = BX.component(legal.txtBox).appendTo(b);
+        txtBg[0].innerHTML = txt;
+    } 
+    else if(scheme.type == 'file') { // txt 문서
+        b.height('auto');
         const txt = loadFile(scheme.src);
         const txtBg = BX.component(legal.txtBox).appendTo(b);
         txtBg[0].innerText = txt;
@@ -61,7 +58,7 @@ function policy(scheme) {
     return b;
 }
 /**
- * txt 파일을 읽어 붙여주는 문서 컴포넌트
+ * 
  * @param {*} scheme 
  * @returns 문서 box
  */

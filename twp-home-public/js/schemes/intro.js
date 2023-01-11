@@ -9,14 +9,7 @@ const intro = {
     },
     contentWrap: {
         kind: 'box',
-        style: {
-            width: '100%',
-            // background: '#f5f5f5',
-            padding: 50,
-            fontWeight: 300,
-            textAlign: 'center',
-            paddingBottom: 150
-        },
+        className : 'contentWrap',
         children: [
             {
                 kind: 'box',

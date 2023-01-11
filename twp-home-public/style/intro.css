@@ -143,6 +143,13 @@ hr {
     color: white;
     border-color: white;
 }
+.contentWrap {
+    width: 100%;
+    padding: 50px;
+    font-weight: 300;
+    text-align: center;
+    padding-bottom: 150px;
+}
 
 @media (max-width: 880px) {
     .teamWrap {
@@ -170,5 +177,8 @@ hr {
     }
     hr {
         width: 80%;
+    }
+    .contentWrap{
+        padding: 0px 0px 150px 0px;
     }
 }

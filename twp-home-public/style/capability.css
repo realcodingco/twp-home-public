@@ -169,9 +169,6 @@
     .gradImg {
         display: none;
     }
-    .spreadBox img{
-        width: 100%;
-    }
     .spreadBox div:nth-child(2) {
         width: 100%;
     }

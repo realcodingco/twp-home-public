@@ -32,7 +32,8 @@ function careers(scheme) {
     const bg = BX.component(career.listWrap).appendTo(b).text(scheme.listTitle);
     bg.find('p')[0].innerText = scheme.subText;
 
-    const pageBody = BX.component(career.jobOpening).appendTo(b).maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
+    const tie = box().appendTo(b).color('#f7f7f7');
+    const pageBody = BX.component(career.jobOpening).appendTo(tie).maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
     const opening = scheme.jobs;
     const listBg = pageBody.find('.jobList')[0];
 

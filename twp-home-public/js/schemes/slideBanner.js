@@ -3,6 +3,22 @@ const slideBanner = {
     bannText: { // 배너 안의 텍스트 요소
         kind: 'box',
         className: 'bannText',
+        children: [
+            {
+                kind: 'box',
+                text: 'sub text'
+            },
+            {
+                kind: 'box',
+                text: 'sub text',
+                style: {
+                    fontSize: 'x-large',
+                    marginTop: 10,
+                    padding: '0px 10px',
+                    color: 'gray'
+                }
+            }
+        ]
     },
     bannImage : { // 배너 안의 이미지 요소
         kind: 'img',

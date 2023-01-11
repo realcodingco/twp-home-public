@@ -1,3 +1,17 @@
+.header {
+    width: 100%;
+    height: auto;
+    padding: 5px 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0;
+    z-index: 10;
+}
+.header.down {
+    box-shadow: 0 0 7px rgba(0,0,0,.1);
+}
 li.menuTitle a{
     text-decoration: none;
     /* padding: 20px; */

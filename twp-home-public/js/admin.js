@@ -246,7 +246,7 @@ const adminMenus = { // 관리자페이지 메뉴항목 및 가이드
         guide: `Edit the list of news articles to be featured on the news page.`
     },
     capability: {
-        text : '[capabilities] page',
+        text : '[Capabilities] page',
         icon : 'edit_document',
         open : 'capability',  
         guide: `Edit the contents of the capabilities menu page`
@@ -784,7 +784,6 @@ function appendData(e) {
     clone[0].style.border = '2px solid red';
     clone[0].id = 'clone';
     $(e.target).before(clone);
-    console.log($(e.target).offset().top)
     clone[0].scrollIntoView({ behavior: 'smooth'})
     // $('form')[0].scrollTop({ top : $('form').scrollTop() + 100, behavior: 'smooth' });
 

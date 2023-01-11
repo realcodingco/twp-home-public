@@ -11,7 +11,7 @@ const intro = {
         kind: 'box',
         style: {
             width: '100%',
-            background: '#f5f5f5',
+            // background: '#f5f5f5',
             padding: 50,
             fontWeight: 300,
             textAlign: 'center',

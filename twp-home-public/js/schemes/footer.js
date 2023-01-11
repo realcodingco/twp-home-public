@@ -3,18 +3,22 @@ const footer = {
     wrap:  {
         kind: 'box',
         className: 'footer-wrap',
-        children: [
-            {
-                kind: 'a',
-                className: 'ci',
-                href: 'index.html',
+        children: [{
+                kind: 'box',
                 children: [
                     {
-                        kind: 'img',
-                        // src: homepage.ci,
-                    }
+                        kind: 'a',
+                        className: 'ci',
+                        href: 'index.html',
+                        children: [
+                            {
+                                kind: 'img',
+                                // src: homepage.ci,
+                            }
+                        ]
+                    },
                 ]
-            },
+            }
         ]
     },
     information: {

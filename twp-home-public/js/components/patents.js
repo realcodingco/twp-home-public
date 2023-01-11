@@ -21,9 +21,9 @@ BX.regist('Patents', compData);
  * @returns 페이지 box
  */
 function patents(scheme) {
-    const b = box().paddingBottom(200);
-    box().appendTo(b).text('Patents').fontSize(35).padding(20);
-    const listBg = BX.component(schemes.list).appendTo(b);
+    const b = box().paddingBottom(300);
+    // box().appendTo(b).text('Patents').fontSize(35).padding(20);
+    const listBg = BX.component(schemes.list).maxWidth(1200).appendTo(b);
     const data = scheme.src;
     for(var i=0; i<data.length; i++) {
         const li = document.createElement('li');

@@ -44,8 +44,10 @@ a .content{
 }
 .cardWrap {
     width: 80%;
+    /* border: 1px solid red; */
     margin: 0px auto;
     display: flex;
+    justify-content: space-between;
     flex-wrap: nowrap;
     scroll-snap-type: x mandatory;
     scroll-snap-align: start;
@@ -59,7 +61,7 @@ a .content{
     text-align: center;
     width: 300px;
     height: 350px;
-    margin: 20px 50px;
+    margin: 20px 45px;
     flex: 0 0 auto;
     border-radius: 9px;
     background: white;

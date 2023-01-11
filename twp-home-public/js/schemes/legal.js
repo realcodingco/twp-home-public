@@ -30,26 +30,24 @@ const legal = {
     },
     txtBox :{
         kind : 'box',
-        className: 'teamsTxt',
+        className: 'fileDocs',
     },
     frame : {
         kind : 'box',
+        className: 'iframebox',
         style: {
             // paddingBottom: 50,
-            overflow: 'auto',
-            height: '100%'
+            overflow: 'hidden',
+            height: 'auto'
         },
         children: [
             {
                 kind: 'iframe',
                 id: 'theIframe',
                 name: 'theIframe',
+                allowTransparency : true,
                 // scrolling : 'no',
-                style : {
-                    width: '100%',
-                    height: '100vh',//7149
-                    // marignBottom: 100
-                }
+                frameborder: 0,
             }
         ]
         

@@ -29,11 +29,11 @@ BX.regist('Intro', compData);
  * @returns company overview, teams box
  */
 function intro(scheme) {
-    const b = box().maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
+    const b = box().left('50%').css('transform', 'translate(-50%, 0)');
     BX.component(intro.head).appendTo(b).text(scheme.title);
     const image = BX.component(intro.image).appendTo(b);
     image[0].src = scheme.cPhoto; 
-    const wrap = BX.component(intro.contentWrap).appendTo(b);
+    const wrap = BX.component(intro.contentWrap).maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)').appendTo(b);
 
     const links = scheme.links;
     for(var l=0; l<links.length; l++){

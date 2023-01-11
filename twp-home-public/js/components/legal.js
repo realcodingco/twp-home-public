@@ -21,33 +21,20 @@ BX.regist('Termsofuse', {bx: termsofuse});
  * @param {object} scheme 
  * @returns 페이지 box
  */
-function legal(scheme) {
-    const isAdmin = document.location.hash == '' || document.location.hash == '#page';
-    const target = isAdmin ? 'patents' : document.location.hash.slice(1); // admin 페이지면 patents 페이지로 열어주기
+function legal(scheme) {//
     const b = box().maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
-    BX.component(intro.head).appendTo(b).text(scheme.title);
+    const target = document.location.hash.slice(1);
+    BX.component(intro.head).appendTo(b).text(scheme.docs[target].title);
 
-    const wrap = box().appendTo(b).size('100%').css('display', 'table').borderTop('1px solid #eeeeee');
-    wrap[0].className = 'legalBody';
-    const docs = scheme.docs;
-    const docBg = BX.component(legal.document).appendTo(wrap);
-    const componentName = docs[target].compName;
-    // 타겟문서 컴포넌트 붙여주기
-    if(docs[target].state == 'open') BX.components[componentName].bx(scheme.docs[target]).appendTo(docBg); 
-
-    const docList = BX.component(legal.menuBar).appendTo(wrap);
-    Object.keys(docs).forEach(function(o) {
-        if(docs[o].state == 'close') return;
-        const li = BX.component(legal.docTitle).appendTo(docList);
-        li.find('a')[0].innerText = docs[o].title;
-        li.find('a')[0].href = 'legal.html#' + o;
-        if(isAdmin) {
-            li.find('a')[0].target = 'Iframe_preview';
-        }
-        if(o == target) { //해시 문서 보여주기
-            li.addClass('clicked')
-        }
-    });
+    if(target == 'policy') {
+        BX.components.Policy.bx(scheme.docs[target]).appendTo(b);
+    }
+    else if(target == 'termsofuse')  {
+        BX.components.Termsofuse.bx(scheme.docs[target]).appendTo(b);
+    } 
+    else if(target == 'patents') {
+        BX.components.Patents.bx(scheme.docs[target]).appendTo(b);
+    }
 
     return b;
 }
@@ -63,9 +50,9 @@ function policy(scheme) {
         frame.find('iframe')[0].src = scheme.src;
     } 
     else if(scheme.type == 'file') {
-        b.overflow('auto').height('100vh');
-        const capitalizeTitle = scheme.title.replace(/\b[a-z]/, letter => letter.toUpperCase());
-        box().appendTo(b).text(capitalizeTitle).fontSize(35).padding(30);
+        b.height('auto');
+        // const capitalizeTitle = scheme.title.replace(/\b[a-z]/, letter => letter.toUpperCase());
+        // box().appendTo(b).text(capitalizeTitle).fontSize(35).padding(30);
         const txt = loadFile(scheme.src);
         const txtBg = BX.component(legal.txtBox).appendTo(b);
         txtBg[0].innerText = txt;
@@ -79,21 +66,20 @@ function policy(scheme) {
  * @returns 문서 box
  */
 function termsofuse(scheme) {
-    const b  = box();
+    const b  = box(); 
     if(scheme.type == 'link') {
         const frame = BX.component(legal.frame).appendTo(b);
         frame.find('iframe')[0].src = scheme.src;
     } 
     else if(scheme.type == 'file') {
-        b.overflow('auto').height('100vh');
-        const capitalizeTitle = scheme.title.replace(/\b[a-z]/, letter => letter.toUpperCase());
-        box().appendTo(b).text(capitalizeTitle).fontSize(35).padding(30);
+        b.height('auto');
+        // const capitalizeTitle = scheme.title.replace(/\b[a-z]/, letter => letter.toUpperCase());
+        // box().appendTo(b).text(capitalizeTitle).fontSize(35).padding(30);
         const txt = loadFile(scheme.src);
-
         const txtBg = BX.component(legal.txtBox).appendTo(b);
-        txtBg[0].innerText = txt;
+        txtBg[0].innerText = txt;  
     }
-
+    
     return b;
 }
 

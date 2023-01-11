@@ -26,16 +26,13 @@ BX.regist('Careers', compData);
  * @returns 현재 채용 정보 box
  */
 function careers(scheme) {
-    const b = box().maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
-    const title = BX.component(career.topTitle).appendTo(b); //배너
-    title[0].style.background = 'url("' + scheme.headImage + '")';
+    const b = box();
     const pageHead = BX.component(career.head).appendTo(b).align('center').text(scheme.pageTitle).textColor(homepage.keyColor);
-    pageHead.find('p')[0].innerText = scheme.subTitle;
 
     const bg = BX.component(career.listWrap).appendTo(b).text(scheme.listTitle);
     bg.find('p')[0].innerText = scheme.subText;
 
-    const pageBody = BX.component(career.jobOpening).appendTo(b);
+    const pageBody = BX.component(career.jobOpening).appendTo(b).maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
     const opening = scheme.jobs;
     const listBg = pageBody.find('.jobList')[0];
 
@@ -43,18 +40,17 @@ function careers(scheme) {
         listBg.innerHTML = '<font style="font-weight:300" size=2 color=hotpink>no current opening..</font>';
     } else {
         for(var i=0; i<opening.length; i++) {
-            const jobBg = BX.component(career.jobBox).appendTo(listBg);
-            const jobTitle = BX.component(career.jobTitle).appendTo(jobBg);
-            $(jobTitle.children()[0]).text(opening[i].title);
+            const item = BX.component(capability.spreadBox).appendTo(listBg);
+            item.find('img').hide();
+            item.find('.spreadBox').children()[1].style.width = '100%'
+            item.find('p')[0].innerText = opening[i].title;
             const deadline = new Date(Number(opening[i].deadline)).toLocaleDateString('en-En', {
                 year: '2-digit', 
                 month: 'short',
                 day: 'numeric',
             });
-            jobTitle.find('span')[0].innerText = 'Deadline : ' + deadline;
-            
-            const board = BX.component(career.jobBoard).appendTo(jobBg);
-            board[0].innerHTML = '<font color=black size=4><b>Job title : ' + opening[i].title + '</b></font><br><font size=2>Deadline : '+deadline+'</font><br><br>' + opening[i].desc;
+            item.find('p')[1].innerText = 'Deadline : ' + deadline;
+            item.find('.detailBox')[0].innerHTML = opening[i].desc;
         }
     }
 

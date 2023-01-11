@@ -28,7 +28,7 @@ BX.regist('IconCard', compData);
  * @returns 카드 섹션 box
  */
 function iconCard(scheme) {
-    const b = box().color('#f7f7f7').paddingBottom(50).maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
+    const b = box().paddingBottom(50).maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
     BX.component(card.cardHead).appendTo(b).text(scheme.headTitle).textColor(homepage.keyColor);
     const wrap = BX.component(card.cardWrap).appendTo(b);
     const navbg = box().appendTo(b).size('100%', 'auto').align('center').marginTop('-50px').addClass('nav-button');
@@ -60,7 +60,11 @@ function iconCard(scheme) {
             } else if(idx == 1) {
                 rightBtn[0].style.visibility = 'visible';
                 leftBtn[0].style.visibility = 'hidden';
+            } else {
+                rightBtn[0].style.visibility = 'visible';
+                leftBtn[0].style.visibility = 'visible';
             }
+            scrollArrowBtnCount = idx;
         });
     });
    
@@ -77,18 +81,9 @@ function iconCard(scheme) {
  */
 let scrollArrowBtnCount = 1;
 function scrollRight(e) {
+    console.log(scrollArrowBtnCount);
     scrollArrowBtnCount++;
     $('.nav-button :nth-child('+scrollArrowBtnCount+')').click();
-    // const cardBox = $('.cardWrap')[0];
-    // cardBox.scrollTo(cardBox.scrollLeft + Math.round(cardBox.scrollWidth / $('.cardWrap').children().length), 500);
-
-    // setTimeout(() => {
-    //     if(cardBox.scrollLeft + 1 >= cardBox.scrollWidth - $('.cardWrap')[0].offsetWidth)
-    //         $(this)[0].style.visibility = 'hidden';
-
-    //     if(cardBox.scrollLeft > 0 )
-    //         $(this).next()[0].style.visibility = 'visible';
-    // }, 510);
 }
 
 /**
@@ -97,14 +92,4 @@ function scrollRight(e) {
 function scrollLeft(e) {
     scrollArrowBtnCount--;
     $('.nav-button :nth-child('+scrollArrowBtnCount+')').click();
-    // const cardBox = $('.cardWrap')[0];
-    // cardBox.scrollTo(cardBox.scrollLeft - Math.round(cardBox.scrollWidth / $('.cardWrap').children().length), 500);
-    
-    // setTimeout(() => {
-    //     if(cardBox.scrollLeft == 0) 
-    //         $(this)[0].style.visibility = 'hidden';
-    
-    //     if(cardBox.scrollLeft <= (cardBox.scrollWidth / 2))
-    //         $(this).prev()[0].style.visibility = 'visible';
-    // }, 510);   
 }

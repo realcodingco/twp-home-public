@@ -41,8 +41,9 @@ function slideBanner(scheme) {
             const pack = box().appendTo(banner); 
             const img = BX.component(slideBanner.bannImage).appendTo(pack);
             img[0].src = scheme.resource[i].image;
-            const txt = BX.component(slideBanner.bannText).appendTo(pack);
-            txt[0].innerHTML = scheme.resource[i].text;
+            const txt = BX.component(slideBanner.bannText).appendTo(pack);//
+            txt.children()[0].innerText = scheme.resource[i].text;
+            txt.children()[1].innerText = scheme.resource[i].subText
             if(!banner.children()[i]) {
                 const child = document.createElement('div');
                 banner[0].appendChild(child);

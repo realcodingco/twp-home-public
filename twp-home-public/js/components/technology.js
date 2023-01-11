@@ -21,8 +21,8 @@ BX.regist('Technology', compData);
  * @returns page box
  */
 function technology(scheme) {
-    const b = box().align('center').paddingBottom(100).color('rgb(181, 207, 246, 0.2)').maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
-    BX.component(intro.head).appendTo(b).text('Technoloby');
+    const b = box().align('center').paddingBottom(100).maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
+    BX.component(intro.head).appendTo(b).text('Technology');
 
     const techData = scheme;
     for(var i=0; i<techData.length; i++) {

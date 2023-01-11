@@ -1,19 +1,21 @@
 .contTitle {
     display: table;
     word-break: keep-all;
-    background: #EAE5FD;
-    width: 18px;
-    height: 18px;
+    background: #BBADFF;
     overflow: hidden;
     color: white;
     font-size: 0px;
-    padding: 0px;
     text-align: center;
+    cursor: pointer;  
     margin: 10px;
-    border-radius: 100px;
-    cursor: pointer;    
+    
+    
+    /* border-radius: 100px;
+    padding: 0px;
+    width: 18px;
+    height: 18px;  
 }
-.contTitle:hover {
+.contTitle:hover { */
     /* transform: scale(1.1); */
     padding: 10px 30px;
     font-size: 14px;

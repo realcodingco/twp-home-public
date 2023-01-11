@@ -3,16 +3,6 @@ const header = {
     header: {
         kind: 'box',
         className: 'header fixed',
-        style: {
-            width: '100%',
-            height: 'auto',
-            padding: '5px 20px',
-            position: 'fixed',
-            left: 0,
-            top: 0,
-            background: 'rgba(255,255,255,0.8)',
-            zIndex: 10
-        }
     },
     ciBox: {
         kind: 'a', 

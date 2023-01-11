@@ -30,7 +30,7 @@ let data, timer = undefined;
  */
 function about(scheme) {
     data = scheme;
-    const b = box();
+    const b = box().maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
 
     const head = BX.component(about.headTitle).appendTo(b).text(scheme.headTitle.keyword);
     head.children()[0].innerHTML = scheme.headTitle.text;

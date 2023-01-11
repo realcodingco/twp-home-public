@@ -89,6 +89,11 @@ $(window).bind({
 });
 
 window.addEventListener('scroll', function(){
+    if(window.scrollY > 0) {
+        $('.header').addClass('down');
+    } else {
+        $('.header').removeClass('down');
+    }
     // 헤더 높이와 메뉴 박스 형태 조정
     // if(window.scrollY > 30) {
     //     if(isMobile && menuBox.style.display == 'block') menuIcon.click();

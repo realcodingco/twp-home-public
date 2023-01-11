@@ -49,15 +49,18 @@ const config = {
         resource : [ // 배너 이미지, 텍스트
             {
                 image: 'style/prod1.png',
-                text: 'Monolithic PICs'
+                text: 'Monolithic PICs',
+                subText: 'input text'
             },
             {
                 image: 'style/prod4.png',
-                text: 'High power lasers'
+                text: 'High power lasers',
+                subText: 'input text'
             },
             {
                 image: 'style/prod3.png',
-                text: 'Infrared LEDs'
+                text: 'Infrared LEDs',
+                subText: 'input text'
             }
         ]
     },
@@ -266,14 +269,14 @@ TransWave Photonics recently received a STTR Phase 2 award for development of mo
                 compName : 'Policy',
                 type : 'link',
                 src : 'https://www.privacypolicies.com/live/d660c899-5381-4786-8eae-bd0b6d54ae66',
-                state: 'open'
+                state: 'open',
             },
             'termsofuse' : {
                 title : 'terms of use',
                 compName : 'Termsofuse',
                 type : 'file',
                 src : 'terms.txt',
-                state: 'open'
+                state: 'open',
             },
             'patents' : {
                 title : 'patents',
@@ -289,7 +292,7 @@ TransWave Photonics recently received a STTR Phase 2 award for development of mo
                         title : 'Quantum cascade laser devices with improved heat extraction'
                     }
                 ],
-                state: 'open'
+                state: 'open',
             }
         },
         // patents : [ // patent 관련 문서 링크 목록
@@ -404,7 +407,8 @@ const adminGuide = {
         resource : [ // 배너 이미지, 텍스트
             {
                 image: 'link path of ther main banner background image',
-                text: 'banner text'
+                text: 'banner text',
+                subText: 'sub text'
             }
         ]
     },
@@ -487,14 +491,14 @@ const adminGuide = {
                 compName : 'readonly',
                 type : '"link" or "file"',
                 src : 'link path or document',
-                state: 'readonly'
+                state: 'readonly',
             },
             'termsofuse' : {
                 title : 'title of the item',
                 compName : 'readonly',
                 type : '"link" or "file"',
                 src : 'link path or document',
-                state: 'readonly'
+                state: 'readonly',
             },
             'patents' : {
                 title : 'title of the item',
@@ -506,7 +510,7 @@ const adminGuide = {
                         title : 'title of the document'
                     }
                 ],
-                state: 'readonly'
+                state: 'readonly',
             }
         }
     },
@@ -544,4 +548,3 @@ const adminGuide = {
 //     const json = localStorage.getItem('homepage') || JSON.stringify(config);
 //     callback && callback(json);
 // }
-

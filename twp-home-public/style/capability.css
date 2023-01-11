@@ -80,11 +80,13 @@
     justify-content: center;
 }
 .spreadBox {
-    box-shadow : 0 10px 40px rgb(0 0 0 / 10%);
+    box-shadow : 0 0 1.5em -0.5em rgb(0 0 0 / 25%);
+    border-radius: 10px;
     /* display: flex; */
     width: 85%;
     margin: 40px auto;
     transition: all 0.5s ease-out;
+    overflow: hidden;
 }
 .spreadBox img {
     width: 200px;
@@ -140,11 +142,13 @@
     width: 100%;
     height: auto;
     border-bottom: 4px solid var(--main);
-    padding: 40px 20px;
+    padding: 40px;
     font-size: 16px;
     font-weight: 300;
     text-align: left;
     background: white;
+    text-align: justify;
+    word-break: keep-all;
 }
 @media (max-width: 700px) {
     .capabilityItem {

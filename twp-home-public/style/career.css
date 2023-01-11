@@ -60,6 +60,7 @@
 @media ( max-width: 720px ) {
     .jobList {
         width: 100%;
+        padding: 0px;
     }
     .jobposting {
         animation: none;
